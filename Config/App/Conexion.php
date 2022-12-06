@@ -6,7 +6,7 @@ Conectando a la bd
 */
 $usuario = "root";
 $pass = "";
-$bd = "tenisdemesa";
+$bd = "torneo_ping_pong_bogota";
 $rutaServidor = "127.0.0.1";
 $puerto = "3306";
 /* 
