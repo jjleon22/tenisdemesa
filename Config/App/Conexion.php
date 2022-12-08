@@ -6,9 +6,9 @@ Conectando a la bd
 */
 $usuario = "root";
 $pass = "";
-$bd = "tenisdemesa";
+$bd = "torneo_ping_pong_bogota";
 $rutaServidor = "127.0.0.1";
-$puerto = "3306";
+$puerto = "3456";
 /* 
 2 - Hacemos un try para intentarnos conectar al servidor.
 La variable de conexión contendrá el método PDO con los parámetros de acceso: tiposql,host, puerto, dbname, usuario, pass.

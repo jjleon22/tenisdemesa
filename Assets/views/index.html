@@ -28,12 +28,18 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Nosotros</a>
             </li>
+            <!--if si es rol 3-->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Gestion</a>
+            </li>
           </ul>
+          <!--se debe elegir uno u otro segun si ya inicio sesion-->
+          <li style="list-style: none;">Hola Juan</li>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin"
             aria-controls="offcanvasLogin">
             Login
           </button>
-          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
         </div>
       </div>
     </nav>
@@ -60,10 +66,11 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1" />
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">
+            <a href="organizador.html" style="text-decoration: none; color:white">Submit</a>
+          </button>
           <br><br>
           <p class="fw-lighter">Login to see your tournament data</p>
-
         </form>
       </div>
     </div> <!--fin login-->
