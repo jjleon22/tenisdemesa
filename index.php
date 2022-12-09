@@ -3,7 +3,6 @@ require_once 'Config/Config.php';
 $ruta = !empty($_GET['url']) ? $_GET['url'] : "Home/index";
 $array = explode("/", $ruta);
 $controller = ucfirst($array[0]);
-error_log(print_r($ruta, TRUE)); 
 $metodo = "index";
 $parametro = "";
 if (!empty($array[1])) {
@@ -20,6 +19,7 @@ if (!empty($array[2])) {
     }
 }
 require_once 'Config/App/Autoload.php';
+require_once 'config/Helpers.php';
 $dirControllers = "Controller/" . $controller . ".php";
 if (file_exists($dirControllers)) {
     require_once $dirControllers;
@@ -32,10 +32,4 @@ if (file_exists($dirControllers)) {
 } else {
     header('Location: ' . BASE_URL . 'errors');
 }
-
-/*
-$objQ = new Query();
-$data = $objQ->selectAll("select * from partido;");
-    //convertir data a json
-    echo json_encode($data,JSON_UNESCAPED_UNICODE);*/
 ?>

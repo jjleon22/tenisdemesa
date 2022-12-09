@@ -1,5 +1,5 @@
 <?php
-    class PartidosDAO extends Query{
+    class OrganizadorDAO extends Query{
         public function __construct()
         {
             parent::__construct();
