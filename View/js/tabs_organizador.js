@@ -22,6 +22,18 @@ function pillActive(activo) {
 }
 
 function cargarTabla(activo) {
+    let url = "http://localhost/tenisdemesa/Partido/getPartidos";
+    let http = new XMLHttpRequest;
+    http.open("GET",url,true);
+    http.send();
+    http.onreadystatechange = () => {
+      if(this.readyState == 4 && this.status == 200)
+      {
+        let res = JSON.parse(responseText);
+        console.log("🚀 ~ file: tabs_organizador.js:33 ~ cargarTabla ~ res", res)
+      }
+    };
+
     let columns = [`
         <th scope="col">#</th>
         <th scope="col">Fecha</th>
@@ -31,7 +43,8 @@ function cargarTabla(activo) {
         <th scope="col">Marcador</th>
         <th scope="col">Comentarios</th>
         <th scope="col">Sala</th>
-        <th scope="col">Entradas Vendidas</th>`, `<th scope="col"># Asociado</th>
+        <th scope="col">Entradas Vendidas</th>`, 
+        `<th scope="col"># Asociado</th>
         <th scope="col">Nombre</th>
         <th scope="col">Direccion</th>
         <th scope="col">Nivel de Juego</th>

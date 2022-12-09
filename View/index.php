@@ -67,7 +67,7 @@
             <input type="password" class="form-control" id="exampleInputPassword1" />
           </div>
           <button type="submit" class="btn btn-primary">
-            <a href="organizador.html" style="text-decoration: none; color:white">Submit</a>
+            <a href="<?php echo BASE_URL;?>Organizador" style="text-decoration: none; color:white">Submit</a>
           </button>
           <br><br>
           <p class="fw-lighter">Login to see your tournament data</p>
