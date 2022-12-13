@@ -21,7 +21,65 @@ function pillActive(activo) {
     cargarTabla(activo);
 }
 
-function cargarTabla(activo) {
+
+
+async function cargarTabla(activo) {
+
+  const elegirTabla = {"tabPartidos": "Partidos",
+  "tabParticipantes":"Participantes",
+  "tabSalas":"Salas",
+  "tabCiudad":"Ciudades",
+  "tabHistorico":"Campeonatos"
+};
+
+  const request = await fetch('http://localhost/tenisdemesa/Partido/getPartidos', {
+    method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        }
+  });
+
+  if (request.ok )
+  {
+    const data = await request.json();
+    const encabezados = Object.keys(data[0]);
+    let dataTable = "";
+    let columnsTable = "";
+    encabezados.forEach(i => {
+      columnsTable += `<th scope="col">${i}</th>`;
+    });
+    data.forEach(i => {
+      console.log("i",i);
+      let contHead = 0;
+      let valores = "";
+      
+      encabezados.forEach((j)=>{
+        //console.log("j",j)
+        valores += `<td>${i[encabezados[contHead++]]}</td>`;
+      })
+      dataTable += `
+      <tr>${valores}</tr>
+        `;
+    });
+    let tabla = `
+      <table class="table" id="tbOrganizador">
+        <thead>
+          <tr>
+            ${columnsTable}
+          </tr>
+          </thead>
+          <tbody class="table-group-divider">
+          ${dataTable}
+          </tbody>
+          </table>`;
+      //console.log("🚀 ~ file: tabs_organizador.js:69 ~ cargarTabla ~ tabla", tabla)
+      
+      document.getElementById("tbOrganizador").innerHTML = tabla;
+  }
+  else
+    console.log("🚀", "No");
+  /*
     let url = "http://localhost/tenisdemesa/Partido/getPartidos";
     let http = new XMLHttpRequest;
     http.open("GET",url,true);
@@ -33,6 +91,7 @@ function cargarTabla(activo) {
         console.log("🚀 ~ file: tabs_organizador.js:33 ~ cargarTabla ~ res", res)
       }
     };
+    
 
     let columns = [`
         <th scope="col">#</th>
@@ -61,17 +120,17 @@ function cargarTabla(activo) {
           <tbody class="table-group-divider">
             <tr>
               <th scope="row">1</th>
-              <td>Mark&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Mark&nbsp;&nbsp;<img src="http://localhost/tenisdemesa/View/resources/trophy-fill.svg" alt="Ganador"></td>
               <td>Otto</td>
               <td>@mdo</td>
-              <td>Jacob&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Jacob&nbsp;&nbsp;<img src="http://localhost/tenisdemesa/View/resources/trophy-fill.svg" alt="Ganador"></td>
               <td>Thornton</td>
               <td>@fat</td>
-              <td>Jacob&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Jacob&nbsp;&nbsp;<img src="http://localhost/tenisdemesa/View/resources/trophy-fill.svg" alt="Ganador"></td>
               <td>Thornton</td>
             </tr>
            </tbody>
         </table>`;
-    document.getElementById("tbOrganizador").innerHTML = tabla;
+        */
 }
 

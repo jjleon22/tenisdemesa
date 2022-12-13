@@ -99,46 +99,46 @@
           <tbody class="table-group-divider">
             <tr>
               <th scope="row">1</th>
-              <td>Mark&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Mark&nbsp;&nbsp;</td>
               <td>Otto</td>
               <td>@mdo</td>
-              <td>Jacob&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Jacob&nbsp;&nbsp;</td>
               <td>Thornton</td>
               <td>@fat</td>
-              <td>Jacob&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Jacob&nbsp;&nbsp;</td>
               <td>Thornton</td>
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td>Jacob&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Jacob&nbsp;&nbsp;</td>
               <td>Thornton</td>
               <td>@fat</td>
-              <td>Jacob&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Jacob&nbsp;&nbsp;</td>
               <td>Thornton</td>
               <td>@fat</td>
-              <td>Jacob&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Jacob&nbsp;&nbsp;</td>
               <td>Thornton</td>
             </tr>
             <tr>
               <th scope="row">3</th>
               <td>Jacob</td>
-              <td>Thornton&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Thornton&nbsp;&nbsp;</td>
               <td>@twitter</td>
-              <td>Jacob&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Jacob&nbsp;&nbsp;</td>
               <td>Thornton</td>
               <td>@fat</td>
-              <td>Jacob&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Jacob&nbsp;&nbsp;</td>
               <td>Thornton</td>
             </tr>
             <tr>
               <th scope="row">3</th>
               <td>Jacob</td>
-              <td>Thornton&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Thornton&nbsp;&nbsp;</td>
               <td>@twitter</td>
-              <td>Jacob&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Jacob&nbsp;&nbsp;</td>
               <td>Thornton</td>
               <td>@fat</td>
-              <td>Jacob&nbsp;&nbsp;<img src="resources/trophy-fill.svg" alt="Ganador"></td>
+              <td>Jacob&nbsp;&nbsp;</td>
               <td>Thornton</td>
             </tr>
             
