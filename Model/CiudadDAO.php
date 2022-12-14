@@ -6,7 +6,7 @@
             parent::__construct();
         }    
 
-        public function getCiudades()
+        public function getCiudadData()
         {
             $sql = "SELECT * FROM ciudad;";
             $data = $this->selectAll($sql);

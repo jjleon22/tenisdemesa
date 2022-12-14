@@ -4,11 +4,10 @@
         {
             parent::__construct();
         }
-        public function getOrgData()
+        public function getHotelData()
         {
-            $SQL = "SELECT * FROM participantes;";
+            $SQL = "SELECT * FROM hotel;";
             $data = $this->selectAll($SQL);
             return $data;
         }
  }
-?>
