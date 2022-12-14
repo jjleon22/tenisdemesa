@@ -1,14 +1,14 @@
 <?php
-    class CiudadDAO extends Query
+    class CampeonatoDAO extends Query
     {
         public function __construct()
         {
             parent::__construct();
         }    
 
-        public function getCiudades()
+        public function getCampData()
         {
-            $sql = "SELECT * FROM ciudad;";
+            $sql = "SELECT * FROM campeonato;";
             $data = $this->selectAll($sql);
             return $data;
         }
