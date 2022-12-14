@@ -154,41 +154,83 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="modaltabPartidos">Modal title</h1>
+              <h1 class="modal-title fs-5" id="modaltabPartidos">Modificar Partido</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">@</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <span class="input-group-text" id="basic-addon1"># Asociado</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Numero Asociado" aria-describedby="basic-addon1" id="txt_num_asociado">
+                <span class="input-group-text" id="basic-addon2">Fecha de partido</span>
+                <input type="date" class="form-control" value="2022-12-20" aria-describedby="basic-addon2" id="dt_fecha">
               </div>
 
               <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <span class="input-group-text" id="basic-addon2">@example.com</span>
-              </div>
-
-              <label for="basic-url" class="form-label">Your vanity URL</label>
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-              </div>
-
-              <div class="input-group mb-3">
-                <span class="input-group-text">$</span>
-                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                <span class="input-group-text">.00</span>
+                <span class="input-group-text" id="basic-addon3">Sala</span>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_sala">
+                  <option value="1" selected>Sala seleccionada</option>
+                  <option value="2">1</option>
+                  <option value="3">2</option>
+                  <option value="4">3</option>
+                </select>
+                <span class="input-group-text" id="basic-addon4">Entradas vendidas</span>
+                <input type="number" class="form-control" id="txt_entradas" aria-describedby="basic-addon3">
               </div>
 
               <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-                <span class="input-group-text">@</span>
-                <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                <span class="input-group-text" id="basic-addon5">Juez</span>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_juez">
+                  <option value="20008 - Paco Rabone" selected>Juaz seleccionada</option>
+                  <option value="20010 - Paco Rabone">1</option>
+                  <option value="20009 - Paco Rabone">20009 - Paco Rabone</option>
+                  <option value="4">3</option>
+                </select>
               </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon6">Jugador 1</span>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_j1">
+                  <option value="1" selected>Juagdor seleccionada</option>
+                  <option value="2">1</option>
+                  <option value="3">2</option>
+                  <option value="20000 - Juan Tenerife">20000 - Juan Tenerife</option>
+                </select>
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon7">Jugador 2</span>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_j2">
+                  <option value="1" selected>Juagdor seleccionada</option>
+                  <option value="20002 - Crespo Young">20002 - Crespo Young</option>
+                  <option value="3">2</option>
+                  <option value="4">3</option>
+                </select>
+              </div>
+              
+              <label for="basic-url" class="form-label">Marcador del partido</label>
+               <div class="input-group mb-3">
+                 <span class="input-group-text" id="basic-addon4">Juagdor 1</span>
+                 <input type="number" class="form-control" id="txt_j1" aria-describedby="basic-addon3">
+                 <span class="input-group-text" id="basic-addon4">Juagdor 2</span>
+                 <input type="number" class="form-control" id="txt_j2" aria-describedby="basic-addon3">
+               </div>
+              
+              <label for="basic-url" class="form-label">Ganador del partido</label>
+              <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input" type="radio" id="chk_j1" value="1" checked name="gruop_ganandor">
+                </div>
+                <label class="form-control" for="chk_j1">1</label>
+                <div class="input-group-text">
+                  <input class="form-check-input" type="radio" id="chk_j2" value="2" name="gruop_ganandor">
+                </div>
+                <label class="form-control" for="chk_j2">2</label>
+              </div>
+
 
               <div class="input-group">
-                <span class="input-group-text">With textarea</span>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
+                <span class="input-group-text">Comentarios</span>
+                <textarea class="form-control" aria-label="With textarea" id="txt_comentarios"></textarea>
               </div>
             </div>
             <div class="modal-footer">
