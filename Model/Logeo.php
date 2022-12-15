@@ -1,19 +1,22 @@
 <?php
-    class Organizador extends Controller{
+
+class Logeo extends Query{
         public function __construct()
         {
             parent::__construct();
         }
-
-        public function index()
+        public function getOrgData()
         {
-            $this->views->getView('Home','organizador');
+            $SQL = "SELECT * FROM participantes;";
+            $data = $this->selectAll($SQL);
+            return $data;
         }
-        
         public function logeo()
         {
             $email = ($_POST['correo']);
             $password = ($_POST['clave']);
+            session_start();
+            $_SESSION['correo']=$email;
             if (empty($_POST['correo']) || empty($_POST['clave'])) {
                 $msg = "Error campos vacios";
             } else {
@@ -37,11 +40,15 @@
             echo json_encode($msg, JSON_UNESCAPED_UNICODE);
             die();
         }
-        public function getOrgData()
-        {
-            $data = $this->model->getOrgData();
-            echo json_encode($data,JSON_UNESCAPED_UNICODE);
-            die();//terminar peticion
-        }
     }
+
+
 ?>
+
+
+
+
+        
+       
+
+

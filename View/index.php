@@ -57,17 +57,17 @@
         <form>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            <input type="email" class="form-control" name="correo" id="exampleInputEmail1" aria-describedby="emailHelp" />
             <div id="emailHelp" class="form-text">
               We'll never share your email with anyone else.
             </div>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" />
+            <input type="password" name="clave" class="form-control" id="exampleInputPassword1" />
           </div>
-          <button type="submit" class="btn btn-primary">
-            <a href="<?php echo BASE_URL;?>Organizador" style="text-decoration: none; color:white">Submit</a>
+          <button type="submit" class="btn btn-primary" onclick="logeo()">
+            <a href="<?php echo BASE_URL;?>logeo" style="text-decoration: none; color:white">Enviar</a>
           </button>
           <br><br>
           <p class="fw-lighter">Login to see your tournament data</p>
