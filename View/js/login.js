@@ -6,7 +6,7 @@ function logeo(e) {
     } else if (password.value == "") {
       //TODO: Agregar css para indicar que la contraseña es obligatoria
     } else {
-      const url = base_url + "Organizador/verificar";
+      const url = "http://localhost/tenisdemesa/Controller/Organizador/verificar";
       const frm = document.getElementById("frmlogeo");
       const http = new XMLHttpRequest();
       http.open("POST", url, true);
@@ -22,19 +22,14 @@ function logeo(e) {
           } else if (res == "3") {
             window.location = base_url + "juez";
         } else if (res == "4") {
-            window.location = base_url + "organizador";
+            window.location = "http://localhost/tenisdemesa/View/Organizador.php";
         }
         } else {
-            //TODO: Agregar css para indicar al usuario porque fallo la validacion
-            Swal.fire({
-              position: 'center',
-              icon: 'warning',
-              title: res,
-              showConfirmButton: false,
-              timer: 1500
-            })
+  
+            alert("Error en el logeo");
+              }
           }
         }
-      };
-    }
+      }
+    
   
