@@ -54,21 +54,20 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <form>
+      <form action="" id="frmlogeo">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" name="correo" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            <input type="email" class="form-control" name="correo" id="correo" aria-describedby="emailHelp" />
             <div id="emailHelp" class="form-text">
               We'll never share your email with anyone else.
             </div>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" name="clave" class="form-control" id="exampleInputPassword1" />
+            <input type="password" name="clave" class="form-control" id="clave" />
           </div>
-          <button type="submit" class="btn btn-primary" onclick="logeo()">
-            <a href="<?php echo BASE_URL;?>logeo" style="text-decoration: none; color:white">Enviar</a>
-          </button>
+          <button type="button" class="botonCardDestacado mt-5" onclick="logeo()">Enviar</button>
+         
           <br><br>
           <p class="fw-lighter">Login to see your tournament data</p>
         </form>
@@ -309,6 +308,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
+    <script src="<?php echo BASE_URL; ?>View/js/login.js"></script>
 </body>
 
 </html>
