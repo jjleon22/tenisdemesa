@@ -6,39 +6,22 @@
         }
         public function getParticipantes()
         {
-            $SQL = "SELECT * FROM participante;";
+           
+            
+            $SQL = "SELECT part.numero_asociado AS \"Num Asociado\", 
+            part.nombre AS \"Nombre\", 
+            part.direccion AS \"Dirección\",
+            part.nivel_de_juego AS \"Nivel\",
+            part.correo AS \"Email\",
+            concat(c.id_ciudad, ' - ' ,(SELECT nombre from ciudad c WHERE part.id_ciudad=c.id_ciudad)) AS \"Ciudad\",
+            concat(r.id_rol, ' - ' ,(SELECT nombre from rol r WHERE part.id_rol= r.id_rol)) AS \"Rol\"
+            FROM participante part JOIN ciudad c ON part.id_ciudad = c.id_ciudad
+            JOIN rol r ON part.id_rol = r.id_rol;";
             $data = $this->selectAll($SQL);
             return $data;
         }
 
-        /*public function logeo()
-    {
-        $email = ($_POST['correo']);
-        $password = ($_POST['clave']);
-        if (empty($_POST['correo']) || empty($_POST['clave'])) {
-            $msg = "Error campos vacios";
-        } else {
-            $data = $this->model->getEmail($email);
-            if ($data) {
-                if (password_verify($password, $data['clave'])) {
-                    $_SESSION['id'] = $data['numero_asociado'];
-                    $_SESSION['nombre'] = $data['nombre'];
-                    $_SESSION['direccion'] = $data['direccion'];
-                    $_SESSION['nivel_de_juego'] = $data['nivel_de_juego'];
-                    $_SESSION['usuario'] = $data['correo'];
-                    $_SESSION['rol'] = $data['id_rol'];
-                    $msg = $data['id_rol'];
-                } else {
-                    $msg = "Usuario o contraseña incorrecta";
-                }
-            } else {
-                $msg = "Usuario o contraseña incorrecta";
-            }
-        }
-        echo json_encode($msg, JSON_UNESCAPED_UNICODE);
-        die();
-    }*/
-
+ 
         public function getEmail($email)
         {
             $SQL = "SELECT * FROM participante WHERE correo='$email';";
@@ -55,6 +38,4 @@
             return false;
         }
     }
-
-
 ?>

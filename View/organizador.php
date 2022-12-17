@@ -65,7 +65,7 @@
         <li class="nav-item" id="tabParticipantes">
           <button class="nav-link" onclick="pillActive(1)">Participantes</button>
         </li>
-        <li class="nav-item" id="tabHoteles">
+        <li class="nav-item" id="tabHotel">
           <button class="nav-link" onclick="pillActive(2)">Hoteles</button>
         </li>
         <li class="nav-item" id="tabSalas">

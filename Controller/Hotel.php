@@ -10,9 +10,9 @@
             $this->views->getView('Home','hotel');
         }
         
-        public function getHotelData()
+        public function getHotel()
         {
-            $data = $this->model->getHotelData();
+            $data = $this->model->getHotel();
             echo json_encode($data,JSON_UNESCAPED_UNICODE);
             die();//terminar peticion
         }

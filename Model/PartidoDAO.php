@@ -21,5 +21,7 @@
             $data = $this->selectAll($SQL);
             return $data;
         }
+
+    
     }
 ?>

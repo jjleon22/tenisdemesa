@@ -10,7 +10,7 @@ function pillActive(activo) {
   let tabsId = [
     "tabPartidos",
     "tabParticipantes",
-    "tabHoteles",
+    "tabHotel",
     "tabSalas",
     "tabCiudad",
     "tabHistorico",
@@ -18,7 +18,7 @@ function pillActive(activo) {
   let tabsName = [
     "Partidos",
     "Participantes",
-    "Hoteles",
+    "Hotel",
     "Salas",
     "Ciudades",
     "Historico Campeonatos",
@@ -43,6 +43,7 @@ async function cargarTabla(activo) {
   const elegirTabla = {
     tabPartidos: "Partido/getPartidos",
     tabParticipantes: "Organizador/getParticipantes",
+    tabHotel: "Hotel/getHotel",
     tabSalas: "Sala/getSalas",
     tabCiudad: "Ciudad/getCiudades",
     tabHistorico: "Campeonato/getCampeonatos",
@@ -147,6 +148,7 @@ async function cargarUno(activo, id) {
   const elegirTabla = {
     tabPartidos: "Partido/getPartido",
     tabParticipantes: "Participante/getParticipante",
+    tabHotel: "Hotel/getHotel",
     tabSalas: "Sala/getSala",
     tabCiudad: "Ciudad/getCiudad",
     tabHistorico: "Campeonato/getCampeonato",
@@ -223,6 +225,10 @@ async function cargarUno(activo, id) {
     }
   }
   else if(activo = "tabParticipantes")
+  {
+    
+  }
+  else if(activo = "tabHotel")
   {
     
   }
