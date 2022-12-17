@@ -7,8 +7,8 @@
             parent::__construct();
         }
 
-        public function getCampData(){            
-            $data = $this->model->getCampData();
+        public function getCampeonatos(){            
+            $data = $this->model->getCampeonatos();
             echo json_encode($data,JSON_UNESCAPED_UNICODE);
             die();
         }

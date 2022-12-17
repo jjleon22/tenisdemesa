@@ -71,11 +71,17 @@ async function cargarTabla(activo) {
         columnsTable += `<th scope="col">${i}</th>`;
     });
     columnsTable += `<th scope="col">Editar</th><th scope="col">Eliminar</th>`;
+    if(encabezados.includes("Medios Disponibles"))
+    {
+        groupBy(data,"Número Sala")
+        console.log(groupBy[0])
+        //console.log(salas[0])
+    }
     data.forEach((i) => {
       console.log("i",i);
       let contHead = 0;
       let valores = "";
-
+      
       encabezados.forEach((j) => {
         //console.log("j",j)
         if(encabezados.includes("numero_asociado_ganador"))
@@ -250,4 +256,15 @@ function cerrar_sesion()
 {
   sessionStorage.clear();
   window.location = "http://localhost/tenisdemesa/";
+}
+
+var groupBy = function (miarray, prop) {
+  return miarray.reduce(function(groups, item) {
+      var val = item[prop];
+      groups[val] = groups[val] || {"Número Sala": item["Número Sala"], "Nombre Hotel": "", "Medios Disponibles": "","Capacidad": 0};
+      groups[val]["Nombre Hotel"] = item["Nombre Hotel"];
+      groups[val]["Medios Disponibles"] += item["Medios Disponibles"] + " ";
+      groups[val]["Capacidad"] = item["Capacidad"];
+      return groups;
+  }, {});
 }

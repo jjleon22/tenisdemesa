@@ -6,18 +6,14 @@
         }
         public function getSalas()
         {
-            $SQL = "SELECT p.id_partido AS \"Num Asociado\", 
-            p.fecha_de_juego AS \"Fecha\", 
-            p.id_sala AS \"Sala\",
-            p.num_entradas_vendidas AS \"Entradas Vendidas\",
-            concat(r.numero_asociado_juez, ' - ' ,j.nombre) AS \"Juez\",
-            concat(r.numero_asociado_jugador1, ' - ' ,(SELECT nombre from participante WHERE numero_asociado=numero_asociado_jugador1)) AS \"Jugador 1\",
-            concat(r.numero_asociado_jugador2, ' - ' ,(SELECT nombre from participante WHERE numero_asociado=numero_asociado_jugador2)) AS \"Jugador 2\",
-            r.numero_asociado_ganador,
-            r.marcador AS \"Marcador\", r.comenatrios AS \"Comentarios\"
-            FROM partido p NATURAL JOIN resultado_partido r
-            JOIN participante j ON r.numero_asociado_juez = j.numero_asociado
-            ORDER BY p.fecha_de_juego ASC;";
+            $SQL = "SELECT s.id_sala AS \"Número Sala\", 
+            concat(h.id_hotel, ' - ' ,(SELECT nombre from hotel h WHERE s.id_hotel=h.id_hotel)) AS \"Nombre Hotel\",
+            me.nombre AS \"Medios Disponibles\",
+            s.capacidad AS \"Capacidad\"
+            FROM sala s JOIN hotel h ON h.id_hotel = s.id_hotel
+            JOIN medios_sala m ON s.id_sala = m.id_sala
+			JOIN medio_comunicacion me ON me.id_medio = m.id_medio
+			ORDER BY s.id_sala;";
             $data = $this->selectAll($SQL);
             return $data;
         }
