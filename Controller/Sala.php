@@ -4,9 +4,9 @@
         {
             parent::__construct();
         }
-        public function getSalaData()
+        public function getSalas()
         {
-            $data = $this->model->getSalaData();
+            $data = $this->model->getSalas();
             echo json_encode($data,JSON_UNESCAPED_UNICODE);
             die();//terminar peticion
         }

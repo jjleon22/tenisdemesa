@@ -11,9 +11,9 @@
         }
         
         
-        public function getOrgData()
+        public function getParticipantes()
         {
-            $data = $this->model->getOrgData();
+            $data = $this->model->getParticipantes();
             echo json_encode($data,JSON_UNESCAPED_UNICODE);
             die();//terminar peticion
         }
@@ -38,7 +38,8 @@
                         $_SESSION['nivel_de_juego'] = $data['nivel_de_juego'];
                         $_SESSION['usuario'] = $data['correo'];
                         $_SESSION['rol'] = $data['id_rol'];
-                        $msg = $data['id_rol'];
+                        echo json_encode($_SESSION, JSON_UNESCAPED_UNICODE);
+                        die();
                     } else {
                         $msg = "Usuario o contraseña incorrecta";
                     }

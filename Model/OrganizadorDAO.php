@@ -4,7 +4,7 @@
         {
             parent::__construct();
         }
-        public function getOrgData()
+        public function getParticipantes()
         {
             $SQL = "SELECT * FROM participante;";
             $data = $this->selectAll($SQL);

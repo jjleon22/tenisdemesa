@@ -24,18 +24,25 @@ async function logeo(e) {
     );
 
     const data = await request.json();
-    console.log(data);
+    //console.log(data);
     
     if (request.ok && request.status == 200) {
       //const res = await request.json();
-      console.log(data);
-      if (data == 1) {
+      //console.log(data);
+      sessionStorage.setItem("id", data.id);
+      sessionStorage.setItem("nombre", data.nombre);
+      sessionStorage.setItem("direccion", data.direccion);
+      sessionStorage.setItem("nivel_de_juego", data.nivel_de_juego);
+      sessionStorage.setItem("usuario", data.usuario);
+      sessionStorage.setItem("rol", data.rol);
+      
+      if (data.rol == 1) {
         window.location = base_url + "administrador";
-      } else if (data == 2) {
+      } else if (data.rol == 2) {
         window.location = base_url + "jugador";
-      } else if (data == 3) {
+      } else if (data.rol == 3) {
         window.location = base_url + "juez";
-      } else if (data == 4) {
+      } else if (data.rol == 4) {
         window.location = "http://localhost/tenisdemesa/Organizador";
       }
     }

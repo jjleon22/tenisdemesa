@@ -30,10 +30,10 @@
               <a class="nav-link active" href="#">Gestion</a>
             </li>
           </ul>
-          <li style="list-style: none;">Hola Juan</li>
+          <li style="list-style: none;" id="txt_nombre">nn</li>
           <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <button class="btn btn-danger" type="button">
-            <a href="index.html" style="text-decoration: none; color:white">Cerrar Sesion</a>
+            <a href="index.html" style="text-decoration: none; color:white" onclick="cerrar_sesion()">Cerrar Sesion</a>
           </button>
         </div>
       </div>

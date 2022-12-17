@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   pillActive(0);
+  document.getElementById("txt_nombre").innerHTML = `
+  <li style="list-style: none;" id="txt_nombre">${sessionStorage.getItem("nombre")}</li>`
 });
 
 let pestanaActiva = 0;
@@ -40,7 +42,7 @@ function pillActive(activo) {
 async function cargarTabla(activo) {
   const elegirTabla = {
     tabPartidos: "Partido/getPartidos",
-    tabParticipantes: "Participante/getParticipantes",
+    tabParticipantes: "Organizador/getParticipantes",
     tabSalas: "Sala/getSalas",
     tabCiudad: "Ciudad/getCiudades",
     tabHistorico: "Campeonato/getCampeonatos",
@@ -235,7 +237,11 @@ async function cargarUno(activo, id) {
   else if(activo = "tabHistorico")
   {
     
-  }
+  } 
+}
 
-  
+function cerrar_sesion()
+{
+  sessionStorage.clear();
+  window.location = "http://localhost/tenisdemesa/";
 }

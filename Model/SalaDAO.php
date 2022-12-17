@@ -4,7 +4,7 @@
         {
             parent::__construct();
         }
-        public function getSalaData()
+        public function getSalas()
         {
             $SQL = "SELECT * FROM sala;";
             $data = $this->selectAll($SQL);

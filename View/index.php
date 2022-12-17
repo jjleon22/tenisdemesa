@@ -28,13 +28,13 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Nosotros</a>
             </li>
-            <!--if si es rol 3-->
+            <!--if si es rol 3
             <li class="nav-item">
               <a class="nav-link" href="#">Gestion</a>
-            </li>
+            </li>-->
           </ul>
           <!--se debe elegir uno u otro segun si ya inicio sesion-->
-          <li style="list-style: none;">Hola Juan</li>
+          <li style="list-style: none;"></li>
           <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLogin"
             aria-controls="offcanvasLogin">
