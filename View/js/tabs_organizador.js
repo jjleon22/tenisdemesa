@@ -150,53 +150,6 @@ async function cargarUno(activo, id) {
     tabHistorico: "Campeonato/getCampeonato",
   };
 
-  const data = {
-    "Comentarios": "El ganador empezo con ventaja",
-    "Entradas Vendidas": 50,
-    "Fecha": "2022-12-12 22:00:00",
-    "Juez":"20009 - Paco Rabone",
-    "Jugador 1": "20000 - Juan Tenerife",
-    "Jugador 2":"20002 - Crespo Young",
-    "Marcador":"15-13",
-    "Sala":4,
-    "id": 4,
-    "numero_asociado_ganador":20000
-  }
-
-  let txt_num_asociado = document.getElementById("txt_num_asociado");
-  let dt_fecha = document.getElementById("dt_fecha");
-  let list_sala = document.getElementById("list_sala");
-  let txt_entradas = document.getElementById("txt_entradas");
-  let list_juez = document.getElementById("list_juez");
-  let list_j1 = document.getElementById("list_j1");
-  let list_j2 = document.getElementById("list_j2");
-  let txt_j1 = document.getElementById("txt_j1");
-  let txt_j2 = document.getElementById("txt_j2");
-  let chk_j1 = document.getElementById("chk_j1");
-  let chk_j2 = document.getElementById("chk_j2");
-  let txt_comentarios = document.getElementById("txt_comentarios");
-
-  txt_num_asociado.value = data["id"];
-  dt_fecha.value = data["Fecha"];
-  list_sala.value = data["Sala"];
-  txt_entradas.value = data["Entradas Vendidas"];
-  list_juez.value = data["Juez"];
-  list_j1.value = data["Jugador 1"];
-  list_j2.value = data["Jugador 2"];
-  txt_j1.value = data["Marcador"].split("-")[0];
-  txt_j2.value = data["Marcador"].split("-")[1];
-  txt_comentarios.value = data["Comentarios"];
-  if(list_j1.value.includes(data["numero_asociado_ganador"]))
-  {
-    chk_j1.checked = true;
-    chk_j2.checked = false;
-  }
-  else{
-    chk_j1.checked = false;
-    chk_j2.checked = true;
-
-  }
-
   try {
     const request = await fetch(
       `http://localhost/tenisdemesa/${elegirTabla[activo]}/${id}`,
@@ -215,4 +168,74 @@ async function cargarUno(activo, id) {
   } catch (error) {
     console.log(error);
   }
+
+  //datos tmp truncados
+
+  const data = {
+    "Comentarios": "El ganador empezo con ventaja",
+    "Entradas Vendidas": 50,
+    "Fecha": "2022-12-12 22:00:00",
+    "Juez":"20009 - Paco Rabone",
+    "Jugador 1": "20000 - Juan Tenerife",
+    "Jugador 2":"20002 - Crespo Young",
+    "Marcador":"15-13",
+    "Sala":4,
+    "id": 4,
+    "numero_asociado_ganador":20000
+  }
+
+  if(activo = "tabPartidos")
+  {
+    let txt_num_asociado = document.getElementById("txt_num_asociado");
+    let dt_fecha = document.getElementById("dt_fecha");
+    let list_sala = document.getElementById("list_sala");
+    let txt_entradas = document.getElementById("txt_entradas");
+    let list_juez = document.getElementById("list_juez");
+    let list_j1 = document.getElementById("list_j1");
+    let list_j2 = document.getElementById("list_j2");
+    let txt_j1 = document.getElementById("txt_j1");
+    let txt_j2 = document.getElementById("txt_j2");
+    let chk_j1 = document.getElementById("chk_j1");
+    let chk_j2 = document.getElementById("chk_j2");
+    let txt_comentarios = document.getElementById("txt_comentarios");
+
+    txt_num_asociado.value = data["id"];
+    dt_fecha.value = data["Fecha"];
+    list_sala.value = data["Sala"];
+    txt_entradas.value = data["Entradas Vendidas"];
+    list_juez.value = data["Juez"];
+    list_j1.value = data["Jugador 1"];
+    list_j2.value = data["Jugador 2"];
+    txt_j1.value = data["Marcador"].split("-")[0];
+    txt_j2.value = data["Marcador"].split("-")[1];
+    txt_comentarios.value = data["Comentarios"];
+    if(list_j1.value.includes(data["numero_asociado_ganador"]))
+    {
+      chk_j1.checked = true;
+      chk_j2.checked = false;
+    }
+    else{
+      chk_j1.checked = false;
+      chk_j2.checked = true;
+  
+    }
+  }
+  else if(activo = "tabParticipantes")
+  {
+    
+  }
+  else if(activo = "tabSalas")
+  {
+    
+  }
+  else if(activo = "tabCiudad")
+  {
+    
+  }
+  else if(activo = "tabHistorico")
+  {
+    
+  }
+
+  
 }

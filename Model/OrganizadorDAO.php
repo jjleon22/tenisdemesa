@@ -6,12 +6,12 @@
         }
         public function getOrgData()
         {
-            $SQL = "SELECT * FROM participantes;";
+            $SQL = "SELECT * FROM participante;";
             $data = $this->selectAll($SQL);
             return $data;
         }
 
-        public function logeo()
+        /*public function logeo()
     {
         $email = ($_POST['correo']);
         $password = ($_POST['clave']);
@@ -37,7 +37,23 @@
         }
         echo json_encode($msg, JSON_UNESCAPED_UNICODE);
         die();
-    }
+    }*/
+
+        public function getEmail($email)
+        {
+            $SQL = "SELECT * FROM participante WHERE correo='$email';";
+            $data = $this->select($SQL);
+            return $data;
+        }
+
+        public function password_verify2($password, $clave)
+        {   
+            if($clave == $password)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 
 

@@ -17,19 +17,21 @@
             echo json_encode($data,JSON_UNESCAPED_UNICODE);
             die();//terminar peticion
         }
-
-        public function verificar($email,$password)
-        {
-            $email = ($_POST['correo']);
-            $password = ($_POST['clave']);
+        
+        public function verificar()
+        {      
+            $_post = json_decode(file_get_contents('php://input'),true);
+            $email = $_post['correo'];
+            $password = $_post['clave'];
+            //print_r($_post);
             session_start();
             $_SESSION['correo']=$email;
-            if (empty($_POST['correo']) || empty($_POST['clave'])) {
+            if (empty($email) || empty($password)) {
                 $msg = "Error campos vacios";
             } else {
                 $data = $this->model->getEmail($email);
                 if ($data) {
-                    if (password_verify($password, $data['clave'])) {
+                    if ($this->model->password_verify2($password, $data['clave'])) {
                         $_SESSION['id'] = $data['numero_asociado'];
                         $_SESSION['nombre'] = $data['nombre'];
                         $_SESSION['direccion'] = $data['direccion'];
@@ -41,7 +43,7 @@
                         $msg = "Usuario o contraseña incorrecta";
                     }
                 } else {
-                    $msg = "Usuario o contraseña incorrecta";
+                    $msg = "Usuario o contraseña incorrecta tipo 2";
                 }
             }
             echo json_encode($msg, JSON_UNESCAPED_UNICODE);

@@ -148,7 +148,7 @@
       </div>
       <!--finc contendio admon-->
 
-      <!-- Modal -->
+      <!-- Modal PArtido -->
 
       <div class="modal fade modal-xl" id="modaltabPartidos" tabindex="-1" aria-labelledby="modaltabPartidos" aria-hidden="true">
         <div class="modal-dialog">
@@ -240,7 +240,7 @@
           </div>
         </div>
       </div>
-      <!--fin modal-->
+      <!--fin modal partido-->
     </div>
     <!--fin contenido-->
     <script src="<?php echo BASE_URL; ?>View/js/tabs_organizador.js"></script>

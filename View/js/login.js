@@ -1,6 +1,8 @@
 async function logeo(e) {
-  const email = document.getElementById("correo");
-  const password = document.getElementById("clave");
+  const email = document.getElementById("correo").value;
+  console.log("🚀 ~ file: login.js:3 ~ logeo ~ email", email)
+  const password = document.getElementById("clave").value;
+  console.log("🚀 ~ file: login.js:5 ~ logeo ~ password", password)
   if (email.value == "") {
     //TODO: Agregar css para indicar que el usuario es obligatorio
   } else if (password.value == "") {
@@ -9,26 +11,32 @@ async function logeo(e) {
     const request = await fetch(
       "http://localhost/tenisdemesa/Organizador/verificar",
       {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json",
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ correo: email, clave: password }),
+        body: JSON.stringify({
+          "correo":email,
+          "clave":password
+       }),
       }
-    ).then((response)=>{(console.log(response))});
-  
+    );
+
+    const data = await request.json();
+    console.log(data);
+    
     if (request.ok && request.status == 200) {
-      const res = await request.json();
-      console.log(res);
-      if (res == "1") {
+      //const res = await request.json();
+      console.log(data);
+      if (data == 1) {
         window.location = base_url + "administrador";
-      } else if (res == "2") {
+      } else if (data == 2) {
         window.location = base_url + "jugador";
-      } else if (res == "3") {
+      } else if (data == 3) {
         window.location = base_url + "juez";
-      } else if (res == "4") {
-        window.location = "http://localhost/tenisdemesa/View/Organizador.php";
+      } else if (data == 4) {
+        window.location = "http://localhost/tenisdemesa/Organizador";
       }
     }
      };
