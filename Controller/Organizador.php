@@ -18,7 +18,7 @@
             die();//terminar peticion
         }
 
-        public function verificar()
+        public function verificar($email,$password)
         {
             $email = ($_POST['correo']);
             $password = ($_POST['clave']);
