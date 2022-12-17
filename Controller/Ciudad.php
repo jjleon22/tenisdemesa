@@ -7,8 +7,8 @@
             parent::__construct();
         }
 
-        public function getCiudadData(){            
-            $data = $this->model->getCiudadData();
+        public function getCiudades(){            
+            $data = $this->model->getCiudades();
             echo json_encode($data,JSON_UNESCAPED_UNICODE);
             die();
         }
