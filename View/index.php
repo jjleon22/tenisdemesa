@@ -40,7 +40,38 @@
     </nav>
     <!--fin navbar-->
 
+<<<<<<< Updated upstream
 
+=======
+    <!--login-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLogin" aria-labelledby="offcanvasLoginLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasLoginLabel">
+          Login
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+      <form action="" id="frmlogeo">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="correo" id="correo" aria-describedby="emailHelp" />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="clave" class="form-control" id="clave" />
+          </div>
+          <button type="button" class="btn btn-primary mt-5" onclick="logeo()">Enviar</button>
+         
+          <br><br>
+          <p class="fw-lighter">Login to see your tournament data</p>
+        </form>
+      </div>
+    </div> <!--fin login-->
+>>>>>>> Stashed changes
 
     <!--contenido main-->
     <div class="container-fluid text-center mt-3">
@@ -58,6 +89,7 @@
           </span>
         </div>
       </div>
+<<<<<<< Updated upstream
       <ul class="nav nav-pills">
         <li class="nav-item" id="tabPartidos">
           <button class="nav-link active" onclick="pillActive(0)">Partidos</button>
@@ -487,6 +519,221 @@
             </div>
           </div>
         </div>
+=======
+      <!--brackets-->
+      <div>
+      <div class="row">
+        <div class="col"><span>Mariana Rosa</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span class="badge text-bg-success">Juan Tenerife</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span>Juan Tenerife</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span>Juene Freio</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span>Sergio Dominguez</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span class="badge text-bg-success">Juene Freio</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span class="badge text-bg-light">Por Jugar</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span class="badge text-bg-light">Por Jugar</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span class="badge text-bg-success">Crespo Young</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span>Camilo Diaz</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span>Crespo Young</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span>Camilo Cruz</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span class="badge text-bg-success">Camilo Cruz</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span>Fede Valde</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span class="badge text-bg-light">Por Jugar</span></div>
+        <div class="col"><svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" class="bi bi-trophy-fill" viewBox="0 0 16 16">
+  <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z"/>
+</svg></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span class="badge text-bg-light">Por Jugar</span></div>
+        <div class="col"><span class="badge text-bg-danger">Ganador</span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span class="badge text-bg-success">Pedro Landia</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span>Peter Cuervo</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span>Pedro Landia</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span>July Combita</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span class="badge text-bg-success">July Combita</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span>Sara Diaz</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span class="badge text-bg-light">Por Jugar</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span class="badge text-bg-light">Por Jugar</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span class="badge text-bg-success">Julian Grande</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span>Cesar Curzarao</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span>Julian Grande</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span>Rocio Gehirn</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span class="badge text-bg-success">Rocio Gehirn</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span>Emilia Zambrano</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+>>>>>>> Stashed changes
       </div>
       <!--fin modal eliminar-->
     </div>

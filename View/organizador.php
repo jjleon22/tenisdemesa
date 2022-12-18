@@ -143,13 +143,12 @@
           </tbody>
         </table>
         <div class="d-grid gap-2" id="btnCrear">
-          <button class="btn btn-primary" type="button">Crear Registro</button>
+      <!--Redirección del boton a crear-->    <button class="btn btn-primary" type="button" onclick="">Crear Registro</button>
         </div>
       </div>
-      <!--finc contendio admon-->
+      <!--fin contendio admon-->
 
-      <!-- Modal PArtido -->
-
+      <!-- Modal Partido -->
       <div class="modal fade modal-xl" id="modaltabPartidos" tabindex="-1" aria-labelledby="modaltabPartidos" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -206,15 +205,15 @@
                   <option value="4">3</option>
                 </select>
               </div>
-              
+
               <label for="basic-url" class="form-label">Marcador del partido</label>
-               <div class="input-group mb-3">
-                 <span class="input-group-text" id="basic-addon4">Juagdor 1</span>
-                 <input type="number" class="form-control" id="txt_j1" aria-describedby="basic-addon3">
-                 <span class="input-group-text" id="basic-addon4">Juagdor 2</span>
-                 <input type="number" class="form-control" id="txt_j2" aria-describedby="basic-addon3">
-               </div>
-              
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon4">Juagdor 1</span>
+                <input type="number" class="form-control" id="txt_j1" aria-describedby="basic-addon3">
+                <span class="input-group-text" id="basic-addon4">Juagdor 2</span>
+                <input type="number" class="form-control" id="txt_j2" aria-describedby="basic-addon3">
+              </div>
+
               <label for="basic-url" class="form-label">Ganador del partido</label>
               <div class="input-group mb-3">
                 <div class="input-group-text">
@@ -241,6 +240,255 @@
         </div>
       </div>
       <!--fin modal partido-->
+      <!-- Modal Participante -->
+      <div class="modal fade modal-xl" id="modaltabParticipantes" tabindex="-1" aria-labelledby="modaltabParticipantes" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modaltabParticipantes">Modificar Participante</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"># Asociado</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Numero Asociado" aria-describedby="basic-addon1" id="txt_num_asociado_p" value="20001">
+                <span class="input-group-text" id="basic-addon1">Nombre</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="txt_nombre_p" value="Juane Freio">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Direccion</span>
+                <input type="text" class="form-control" placeholder="Direccion" aria-label="Direccion" aria-describedby="basic-addon1" id="txt_direccion_p" value="Calle 9 # 38 - 75">
+                <span class="input-group-text" id="basic-addon4">Email</span>
+                <input type="email" class="form-control" id="txt_email" aria-describedby="basic-addon3" value="juaneFrio@lbpp.com">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">Nivel de juego</span>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_nivel_p">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5" selected>5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <span class="input-group-text" id="basic-addon5">Ciudad</span>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_ciudad_p">
+                  <option value="20008 - Paco Rabone" selected>1 - Cali</option>
+                  <option value="20010 - Paco Rabone">1</option>
+                  <option value="20009 - Paco Rabone">20009 - Paco Rabone</option>
+                  <option value="4">3</option>
+                </select>
+                <span class="input-group-text" id="basic-addon5">Rol</span>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_rol_p">
+                  <option value="20008 - Paco Rabone" selected>1 - Admin</option>
+                  <option value="20010 - Paco Rabone">1</option>
+                  <option value="20009 - Paco Rabone">20009 - Paco Rabone</option>
+                  <option value="4">3</option>
+                </select>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--fin modal particpante-->
+      <!-- Modal Hotel -->
+      <div class="modal fade modal-xl" id="modaltabHotel" tabindex="-1" aria-labelledby="modaltabHotel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modaltabHotel">Modificar Hoteles</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Nombre</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="txt_nombre_h" value="B de BAKATA">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Direccion</span>
+                <input type="text" class="form-control" placeholder="Direccion" aria-label="Direccion" aria-describedby="basic-addon1" id="txt_direccion_h" value="Carrera 7A # 46-75">
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--fin modal hotel-->
+      <!-- Modal Sala -->
+      <div class="modal fade modal-xl" id="modaltabSalas" tabindex="-1" aria-labelledby="modaltabSalas" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modaltabSalas">Modificar Sala</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">Hotel Asociado</span>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_hoteles_sala">
+                  <option value="1" selected>1 - B de BAKATA</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <span class="input-group-text" id="basic-addon1">Capacidad sala</span>
+                <input type="text" class="form-control" placeholder="capacidad" aria-label="capacida" aria-describedby="basic-addon1" id="txt_capacidad_sala" value="40">
+              </div>
+              <div id="chk_medios">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="chk_tv" checked>
+                  <label class="form-check-label" for="chk_tv">Televisor</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="chk_imp">
+                  <label class="form-check-label" for="chk_imp">Proyector</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="chk_imp" checked>
+                  <label class="form-check-label" for="chk_imp">Computador</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="chk_imp" checked>
+                  <label class="form-check-label" for="chk_imp">Camaras</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="chk_imp" checked>
+                  <label class="form-check-label" for="chk_imp">Microfono</label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--fin modal sala-->
+      <!-- Modal Ciudad -->
+      <div class="modal fade modal-xl" id="modaltabCiudad" tabindex="-1" aria-labelledby="modaltabCiudad" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modaltabCiudad">Modificar Ciudad</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Nombre</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="txt_nombre_ciudad" value="Cali">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"># Clubes</span>
+                <input type="number" class="form-control" placeholder="Direccion" aria-label="Direccion" aria-describedby="basic-addon1" id="txt_num_clubes" value="4">
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--fin modal Ciudad-->
+      <!-- Modal Campeonato -->
+      <div class="modal fade modal-xl" id="modaltabHistorico" tabindex="-1" aria-labelledby="modaltabHistorico" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modaltabHistorico">Modificar Campeonato</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Titulo</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="txt_nombre_c" value="PP 1">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">Ciudada</span>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_ganador_c">
+                  <option value="1" selected>3 - Cucuta</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">Ganador</span>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_ganador_c">
+                  <option value="1" selected>20003 - Camilo Cruz</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--fin modal Ciudad-->
+      <!-- Modal Elimianr -->
+      <div class="modal fade" id="modalEliminar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalEliminar" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modalEliminar">Elimiar Registro</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <p>Esta seguro que desea elmimar este registro</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-danger">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--fin modal eliminar-->
     </div>
     <!--fin contenido-->
     <script src="<?php echo BASE_URL; ?>View/js/tabs_organizador.js"></script>

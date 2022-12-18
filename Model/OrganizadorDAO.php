@@ -22,6 +22,21 @@ class OrganizadorDAO extends Query
         return $data;
     }
 
+    public function getParticipantesone($id)
+    {
+        $SQL = "SELECT part.numero_asociado AS \"Num Asociado\", 
+            part.nombre AS \"Nombre\", 
+            part.direccion AS \"Dirección\",
+            part.nivel_de_juego AS \"Nivel\",
+            part.correo AS \"Email\",
+            concat(c.id_ciudad, ' - ' ,(SELECT nombre from ciudad c WHERE part.id_ciudad=c.id_ciudad)) AS \"Ciudad\",
+            concat(r.id_rol, ' - ' ,(SELECT nombre from rol r WHERE part.id_rol= r.id_rol)) AS \"Rol\"
+            FROM participante part JOIN ciudad c ON part.id_ciudad = c.id_ciudad
+            JOIN rol r ON part.id_rol = r.id_rol WHERE part.numero_asociado = $id";
+        $data = $this->selectAll($SQL);
+        return $data;
+    }
+
     public function insertarparticipante($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol)
     {
         $sql = "INSERT INTO participante(numero_asociado,nombre,direccion,nivel_juego,correo,clave,id_rol) VALUES (?,?,?,?,?,?,?)";
@@ -50,6 +65,8 @@ class OrganizadorDAO extends Query
             $res = "error";
         }
     }
+
+    
 
     function eliminarparticipante($id)
     {
