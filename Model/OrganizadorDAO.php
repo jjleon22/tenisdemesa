@@ -22,7 +22,7 @@ class OrganizadorDAO extends Query
         return $data;
     }
 
-    public function getParticipantesone($id)
+    public function getParticipante($id)
     {
         $SQL = "SELECT part.numero_asociado AS \"Num Asociado\", 
             part.nombre AS \"Nombre\", 

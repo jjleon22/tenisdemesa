@@ -93,42 +93,14 @@
       <!--brackets-->
       <div>
       <div class="row">
-        <div class="col"><span>Mariana Rosa</span></div>
+        <div class="col"><span id="txt_8_p1_j1">Mariana Rosa</span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
       </div>
       <div class="row">
-        <div class="col"><span class="badge text-bg-success">Juan Tenerife</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span></span></div>
-        <div class="col"><span>Juan Tenerife</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span></span></div>
-        <div class="col"><span>Juene Freio</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span>Sergio Dominguez</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span class="badge text-bg-success">Juene Freio</span></div>
+        <div class="col"><span id="txt_8_p1_j2">Juan Tenerife</span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
@@ -136,55 +108,27 @@
       </div>
       <div class="row">
         <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span class="badge text-bg-light">Por Jugar</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span class="badge text-bg-light">Por Jugar</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span class="badge text-bg-success">Crespo Young</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span>Camilo Diaz</span></div>
-        <div class="col"><span></span></div>
+        <div class="col"><span id="txt_4_p1_j1">Juan Tenerife</span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
       </div>
       <div class="row">
         <div class="col"><span></span></div>
-        <div class="col"><span>Crespo Young</span></div>
+        <div class="col"><span id="txt_4_p1_j2">Juene Freio</span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
       </div>
       <div class="row">
-        <div class="col"><span></span></div>
-        <div class="col"><span>Camilo Cruz</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span class="badge text-bg-success">Camilo Cruz</span></div>
+        <div class="col"><span id="txt_8_p2_j1">Sergio Dominguez</span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
       </div>
       <div class="row">
-        <div class="col"><span>Fede Valde</span></div>
+        <div class="col"><span id="txt_8_p2_j2">Juene Freio</span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
@@ -193,8 +137,64 @@
       <div class="row">
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
+        <div class="col"><span id="txt_2_p1_j1">Por Jugar</span></div>
         <div class="col"><span></span></div>
-        <div class="col"><span class="badge text-bg-light">Por Jugar</span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span id="txt_2_p1_j2">Por Jugar</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span id="txt_8_p3_j1">Crespo Young</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span id="txt_8_p3_j2">Camilo Diaz</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span id="txt_4_p2_j1">Crespo Young</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span id="txt_4_p2_j2">Camilo Cruz</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span id="txt_8_p4_j1">Camilo Cruz</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span id="txt_8_p4_j2">Fede Valde</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span id="txt_1_p1_j1">Por Jugar</span></div>
         <div class="col"><svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" class="bi bi-trophy-fill" viewBox="0 0 16 16">
   <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z"/>
 </svg></div>
@@ -203,46 +203,18 @@
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
-        <div class="col"><span class="badge text-bg-light">Por Jugar</span></div>
-        <div class="col"><span class="badge text-bg-danger">Ganador</span></div>
+        <div class="col"><span id="txt_1_p1_j2">Por Jugar</span></div>
+        <div class="col"><span id="txt_ganador" class="badge text-bg-danger">Ganador</span></div>
       </div>
       <div class="row">
-        <div class="col"><span class="badge text-bg-success">Pedro Landia</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span>Peter Cuervo</span></div>
+        <div class="col"><span id="txt_8_p5_j1">Pedro Landia</span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
       </div>
       <div class="row">
-        <div class="col"><span></span></div>
-        <div class="col"><span>Pedro Landia</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span></span></div>
-        <div class="col"><span>July Combita</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span class="badge text-bg-success">July Combita</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span>Sara Diaz</span></div>
+        <div class="col"><span id="txt_8_p5_j2">Peter Cuervo</span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
@@ -250,55 +222,83 @@
       </div>
       <div class="row">
         <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span class="badge text-bg-light">Por Jugar</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span class="badge text-bg-light">Por Jugar</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span class="badge text-bg-success">Julian Grande</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span>Cesar Curzarao</span></div>
-        <div class="col"><span></span></div>
+        <div class="col"><span id="txt_4_p3_j1">Pedro Landia</span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
       </div>
       <div class="row">
         <div class="col"><span></span></div>
-        <div class="col"><span>Julian Grande</span></div>
+        <div class="col"><span id="txt_4_p3_j2">July Combita</span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
       </div>
       <div class="row">
-        <div class="col"><span></span></div>
-        <div class="col"><span>Rocio Gehirn</span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-        <div class="col"><span></span></div>
-      </div>
-      <div class="row">
-        <div class="col"><span class="badge text-bg-success">Rocio Gehirn</span></div>
+        <div class="col"><span id="txt_8_p6_j1">July Combita</span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
       </div>
       <div class="row">
-        <div class="col"><span>Emilia Zambrano</span></div>
+        <div class="col"><span id="txt_8_p6_j2">Sara Diaz</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span id="txt_2_p2_j1">Por Jugar</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span id="txt_2_p2_j2">Por Jugar</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span id="txt_8_p7_j1">Julian Grande</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span id="txt_8_p7_j2">Cesar Curzarao</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span id="txt_4_p4_j1">Julian Grande</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span></span></div>
+        <div class="col"><span id="txt_4_p4_j2">Rocio Gehirn</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span id="txt_8_p8_j1">Rocio Gehirn</span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+        <div class="col"><span></span></div>
+      </div>
+      <div class="row">
+        <div class="col"><span  id="txt_8_p8_j2">Emilia Zambrano</span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
         <div class="col"><span></span></div>
@@ -311,6 +311,7 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
     <script src="<?php echo BASE_URL; ?>View/js/login.js"></script>
-</body>
+    <script src="<?php echo BASE_URL; ?>View/js/index.js"></script>
+  </body>
 
 </html>
