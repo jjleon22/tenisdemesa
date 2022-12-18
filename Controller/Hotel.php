@@ -16,5 +16,11 @@
             echo json_encode($data,JSON_UNESCAPED_UNICODE);
             die();//terminar peticion
         }
+        
+        public function insertarhotel(){            
+            $data = $this->model->insertarhotel();
+            // es necesario?? echo json_encode($data,JSON_UNESCAPED_UNICODE);
+            die();
+        }
     }
 ?>

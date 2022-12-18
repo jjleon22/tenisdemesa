@@ -10,5 +10,11 @@
             echo json_encode($data,JSON_UNESCAPED_UNICODE);
             die();//terminar peticion
         }
+
+        public function insertarpartido(){            
+            $data = $this->model->insertarpartido();
+            // es necesario?? echo json_encode($data,JSON_UNESCAPED_UNICODE);
+            die();
+        }
     }
 ?>

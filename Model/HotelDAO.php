@@ -13,4 +13,24 @@
             $data = $this->selectAll($SQL);
             return $data;
         }
+
+        public function insertarhotel()
+        {
+            $id_hotel = ($_POST['id_hotel']); 
+            $nombre = ($_POST['nombre']);
+            $direccion = ($_POST['direccion']);
+    
+            if (
+                empty($id_hotel) || empty($nombre) || empty($direccion) 
+            ) {
+                $msg = "Todos los campos son obligatorios";
+            } else {
+                $data = $this->model->insertarhotel($id_hotel, $nombre, $direccion);
+                if ($data === "ok") {
+                    $msg = "Hotel registrado";
+                } else {
+                    $msg = "Error";
+                }
+            }
+        }
  }

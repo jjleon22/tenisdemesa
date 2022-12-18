@@ -17,5 +17,25 @@
             $data = $this->selectAll($SQL);
             return $data;
         }
+
+        public function insertarsala()
+        {
+            $id_sala = ($_POST['id_sala']); 
+            $id_hotel = ($_POST['id_hotel']);
+            $capacidad = ($_POST['capacidad']);
+            
+            if (
+                empty($id_sala) || empty($id_hotel) || empty($capacidad) 
+            ) {
+                $msg = "Todos los campos son obligatorios";
+            } else {
+                $data = $this->model->insertarsala($id_sala, $id_hotel, $capacidad);
+                if ($data === "ok") {
+                    $msg = "Sala registrada";
+                } else {
+                    $msg = "Error";
+                }
+            }
+        }
  }
 ?>

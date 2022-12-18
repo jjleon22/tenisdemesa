@@ -22,6 +22,27 @@
             return $data;
         }
 
+        public function insertarpartido()
+        {
+            $id_partido = ($_POST['id_partido']); 
+            $fecha_de_juego = ($_POST['fecha_de_juego']);
+            $id_sala = ($_POST['id_sala']);
+            $num_entradas_vendidas = ($_POST['num_entradas_vendidas']);
+    
+            if (
+                empty($id_partido) || empty($fecha_de_juego) || empty($id_sala) || empty($num_entradas_vendidas)
+            ) {
+                $msg = "Todos los campos son obligatorios";
+            } else {
+                $data = $this->model->insertarpartido($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas);
+                if ($data === "ok") {
+                    $msg = "Partido registrado";
+                } else {
+                    $msg = "Error";
+                }
+            }
+        }
+
     
     }
 ?>
