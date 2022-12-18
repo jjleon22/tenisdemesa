@@ -35,9 +35,9 @@ function pillActive(activo) {
     <button class="nav-link active" onclick="pillActive(${activo})">${tabsName[activo]}</button>
     </li>
     `;
-  document.getElementById("btnCrear").innerHTML = `<div class="d-grid gap-2" id="btnCrear">
+  /*document.getElementById("btnCrear").innerHTML = `<div class="d-grid gap-2" id="btnCrear">
   <button class="btn btn-primary" type="button" onclick="crearRegistro(${activo})">Crear Registro</button>
-</div>`;
+</div>`;*/
   pestanaActiva = activo;
   cargarTabla(tabsId[activo]);
 }
@@ -280,10 +280,23 @@ async function cargarUno(activo, id) {
   } 
 }
 
-function cerrar_sesion()
+async function cerrar_sesion()
 {
   sessionStorage.clear();
-  window.location = "http://localhost/tenisdemesa/";
+  const request = await fetch(
+    "http://localhost/tenisdemesa/Home/salir",
+    {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  if(request.ok)
+  {
+    window.location = "http://localhost/tenisdemesa";
+  }
 }
 
 var groupBy = function (miarray, prop) {

@@ -77,7 +77,7 @@ CREATE TABLE telefono_hotel (
  FOREIGN KEY (id_hotel) REFERENCES hotel(id_hotel)
 );
 
-CREATE TABLE telefono_parcipante (
+CREATE TABLE telefono_participante (
  numero_asociado INTEGER NOT NULL,
  telefono varchar(20),
  PRIMARY KEY (numero_asociado,telefono),
@@ -160,7 +160,15 @@ VALUES ('Juane Freio', 'Calle 9 # 38 - 75', 5, 'juaneFrio@lbpp.com','clave',1,1)
 ('Daniel Torres', 'Calle 32 # 8 - 78', 6, 'danielToes@lbpp.com','clave',8,4),
 ('Paco Rabone', 'Carrera 33 # 3 - 89', 8, 'pacoRane@lbpp.com','clave',8,3),
 ('Metro Metropolis', 'Calle 45 # 367 - 897', 9, 'metroMeis@lbpp.com','clave',4,3),
-('Argento Cristo', 'Carrera 45 # 386 - 78', 10, 'argentoCrto@lbpp.com','clave',5,2);
+('Argento Cristo', 'Carrera 45 # 386 - 78', 10, 'argentoCrto@lbpp.com','clave',5,2)
+('Mariana Rosa', 'Calle 99 # 38 - 75', 5, 'marianaRosa@lbpp.com','clave',1,4),
+('Sergio Dominguez', 'Calle 80 # 670 - 75', 1, 'sergioDoez@lbpp.com','clave',6,4),
+('Camilo Diaz', 'Carrera 60 # 34 - 56', 2, 'camiloDiaz@lbpp.com','clave',3,4),
+('Peter Cuervo', 'Calle 6 # 56 - 6', 3, 'peterCuvo@lbpp.com','clave',4,4),
+('Sara Diaz', 'Calle 887 # 45 - 78', 4, 'saraDiaz@lbpp.com','clave',5,4),
+('Cesar Curzarao', 'Calle 90 # 67A - 75', 5, 'cesarCuao@lbpp.com','clave',6,4),
+('Emilia Zambrano', 'Carrera 23 # 66 - 56', 5, 'emiliaZano@lbpp.com','clave',7,4),
+('Fede Valde', 'Carrera 232 # 66 - 56', 5, 'fedeVade@lbpp.com','clave',7,4);
 INSERT INTO hospedaje VALUES 
 (1,20000,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
 (2,20002,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
@@ -173,7 +181,15 @@ INSERT INTO hospedaje VALUES
 (4,20008,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
 (5,20009,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
 (1,20010,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
-(1,20011,'2022-12-06 18:48:37','2022-12-15 18:48:37');
+(1,20011,'2022-12-06 18:48:37','2022-12-15 18:48:37')
+(2,20012,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
+(1,20013,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
+(3,20014,'2022-12-06 18:48:37','2022-12-18 18:48:37'),
+(4,20015,'2022-12-06 18:48:37','2022-12-19 18:48:37'),
+(5,20016,'2022-12-06 18:48:37','2022-12-18 18:48:37'),
+(1,20017,'2022-12-06 18:48:37','2022-12-29 18:48:37'),
+(2,20018,'2022-12-06 18:48:37','2022-12-20 18:48:37'),
+(4,20019,'2022-12-06 18:48:37','2022-12-21 18:48:37');
 INSERT INTO telefono_hotel VALUES
 (1,'6015673456'),(1,'6015673457'),
 (2,'60145473456'),(2,'6015656757'),
@@ -195,11 +211,14 @@ INSERT INTO campeonatos_asistidos VALUES
 INSERT INTO partido (fecha_de_juego, id_sala, num_entradas_vendidas) VALUES
 ('2022-12-12 22:00:00', 4, 50),('2022-12-12 23:00:00', 5, 52),
 ('2022-12-13 22:00:00', 7, 30),('2022-12-13 23:00:00', 9, 52),
-('2022-12-13 22:00:00', 8, 5),('2022-12-14 23:00:00', 12, 400);
+('2022-12-13 22:00:00', 8, 5),('2022-12-14 23:00:00', 12, 400),
+('2022-12-14 22:00:00', 8, 5),('2022-12-15 23:00:00', 12, 400);
 INSERT INTO resultado_partido VALUES 
 (1,20009,20000,20002,20000,'15-13','El ganador empezo con ventaja'),
 (2,20010,20003,20005,20003,'15-10','Gran juego limpio del Camilo'),
 (3,20009,20004,20006,20006,'14-15','Grande julian'),
-(4,20010,20007,20008,20007,'10-15','Rocio da una aplastante victoria'),
-(5,20010,20000,20003,20000,'15-13','Juan Tanarife ya muestra cansancio pero  un alto nivel'),
-(6,20009,20006,20007,20007,'12-15','Rocio es la relevaion del torneo');
+(4,20010,20007,20008,20007,'10-15','Increible inicio'),
+(5,20010,20012,20013,20012,'15-13','Primer partido pero ya va con cansancio'),
+(6,20009,20014,20015,20015,'12-15','No comentarios'),
+(7,20010,20016,20017,20016,'15-13','El ganador puede se la revelacion'),
+(8,20009,20019,20018,20019,'15-10','Ultimo partido de octavos');
