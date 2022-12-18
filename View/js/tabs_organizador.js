@@ -35,9 +35,9 @@ function pillActive(activo) {
     <button class="nav-link active" onclick="pillActive(${activo})">${tabsName[activo]}</button>
     </li>
     `;
-  document.getElementById("btnCrear").innerHTML = `<div class="d-grid gap-2" id="btnCrear">
+  /*document.getElementById("btnCrear").innerHTML = `<div class="d-grid gap-2" id="btnCrear">
   <button class="btn btn-primary" type="button" onclick="crearRegistro(${activo})">Crear Registro</button>
-</div>`;
+</div>`;*/
   pestanaActiva = activo;
   cargarTabla(tabsId[activo]);
 }
