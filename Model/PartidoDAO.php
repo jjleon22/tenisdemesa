@@ -22,27 +22,43 @@
             return $data;
         }
 
-        public function insertarpartido()
-        {
-            $id_partido = ($_POST['id_partido']); 
-            $fecha_de_juego = ($_POST['fecha_de_juego']);
-            $id_sala = ($_POST['id_sala']);
-            $num_entradas_vendidas = ($_POST['num_entradas_vendidas']);
-    
-            if (
-                empty($id_partido) || empty($fecha_de_juego) || empty($id_sala) || empty($num_entradas_vendidas)
-            ) {
-                $msg = "Todos los campos son obligatorios";
-            } else {
-                $data = $this->model->insertarpartido($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas);
-                if ($data === "ok") {
-                    $msg = "Partido registrado";
-                } else {
-                    $msg = "Error";
-                }
-            }
+        public function insertarpartido($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas)
+    {
+        $sql = "INSERT INTO partido(id_partido,fecha_de_juego,id_sala,num_entradas_vendidas) VALUES (?,?,?,?)";
+        $datos = array($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas);
+        $data = $this->save($sql, $datos);
+        if ($data == 1) {
+            $res = "ok";
+        } else {
+            $res = "error";
         }
+        return $res;
+    }
+
+    function editarpartido($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas)
+{
+  
+    $sql = "UPDATE partido SET fecha_de_juego = :fecha_de_juego, id_sala = :id_sala, num_entradas_vendidas = :num_entradas_vendidas
+     WHERE id_partido = :id_partido";
+    $datos = array($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas);
+    $data = $this->editar($sql, $datos);
+    return $data;
+    if($data == 1){
+        $res = "ok";
+    } else {
+        $res = "error";
+    }
+  }
+
+  function eliminarpartido($id_partido)
+  {
+    $sql = "DELETE FROM partido WHERE id_partido= :id_partido";
+    $datos = array($id_partido);
+    $data = $this->eliminar($sql, $datos);
+    return $data;
+  }
+
+        
 
     
     }
-?>

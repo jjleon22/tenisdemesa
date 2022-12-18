@@ -1,14 +1,15 @@
 <?php
-    class OrganizadorDAO extends Query{
-        public function __construct()
-        {
-            parent::__construct();
-        }
-        public function getParticipantes()
-        {
-           
-            
-            $SQL = "SELECT part.numero_asociado AS \"Num Asociado\", 
+class OrganizadorDAO extends Query
+{
+    public function __construct()
+    {
+        parent::__construct();
+    }
+    public function getParticipantes()
+    {
+
+
+        $SQL = "SELECT part.numero_asociado AS \"Num Asociado\", 
             part.nombre AS \"Nombre\", 
             part.direccion AS \"Dirección\",
             part.nivel_de_juego AS \"Nivel\",
@@ -17,53 +18,61 @@
             concat(r.id_rol, ' - ' ,(SELECT nombre from rol r WHERE part.id_rol= r.id_rol)) AS \"Rol\"
             FROM participante part JOIN ciudad c ON part.id_ciudad = c.id_ciudad
             JOIN rol r ON part.id_rol = r.id_rol;";
-            $data = $this->selectAll($SQL);
-            return $data;
-        }
+        $data = $this->selectAll($SQL);
+        return $data;
+    }
 
-        public function insertarparticipante()
-        {
-            $id = ($_POST['numero_asociado']); 
-            $nombre = ($_POST['nombre']);
-            $direccion = ($_POST['direccion']);
-            $nivel_juego = ($_POST['nivel_juego']);
-            $correo = ($_POST['correo']);
-            $clave = intval(($_POST['clave']));
-            $id_rol = intval(($_POST['id_rol']));
-    
-    
-            echo var_dump($id_rol);
-    
-            if (
-                empty($id_rol) || empty($nombre) || empty($direccion) || empty($nivel_juego) || empty($correo) ||
-                empty($clave) || empty($id_rol)
-            ) {
-                $msg = "Todos los campos son obligatorios";
-            } else {
-                $data = $this->model->insertarparticipante($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol);
-                if ($data === "ok") {
-                    $msg = "Participante registrado";
-                } else {
-                    $msg = "Error";
-                }
-            }
+    public function insertarparticipante($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol)
+    {
+        $sql = "INSERT INTO participante(numero_asociado,nombre,direccion,nivel_juego,correo,clave,id_rol) VALUES (?,?,?,?,?,?,?)";
+        $datos = array($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol);
+        $data = $this->save($sql, $datos);
+        if ($data == 1) {
+            $res = "ok";
+        } else {
+            $res = "error";
         }
+        return $res;
+    }
 
- 
-        public function getEmail($email)
-        {
-            $SQL = "SELECT * FROM participante WHERE correo='$email';";
-            $data = $this->select($SQL);
-            return $data;
-        }
+    function editarparticipante($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol)
+    {
 
-        public function password_verify2($password, $clave)
-        {   
-            if($clave == $password)
-            {
-                return true;
-            }
-            return false;
+        $sql = "UPDATE participante SET nombre = :nombre, direccion = :direccion, nivel_juego = :nivel_juego,
+    correo = :correo, clave = :clave, id_rol = :id_rol
+     WHERE numero_asociado = :numero_asociado";
+        $datos = array($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol);
+        $data = $this->editar($sql, $datos);
+        return $data;
+        if ($data == 1) {
+            $res = "ok";
+        } else {
+            $res = "error";
         }
     }
-?>
+
+    function eliminarparticipante($id)
+    {
+        $sql = "DELETE FROM participante WHERE numero_asociado= :numero_asociado";
+        $datos = array($id);
+        $data = $this->eliminar($sql, $datos);
+        return $data;
+    }
+
+
+
+    public function getEmail($email)
+    {
+        $SQL = "SELECT * FROM participante WHERE correo='$email';";
+        $data = $this->select($SQL);
+        return $data;
+    }
+
+    public function password_verify2($password, $clave)
+    {
+        if ($clave == $password) {
+            return true;
+        }
+        return false;
+    }
+}

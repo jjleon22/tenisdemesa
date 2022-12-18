@@ -14,23 +14,41 @@
             return $data;
         }
 
-        public function insertarhotel()
-        {
-            $id_hotel = ($_POST['id_hotel']); 
-            $nombre = ($_POST['nombre']);
-            $direccion = ($_POST['direccion']);
-    
-            if (
-                empty($id_hotel) || empty($nombre) || empty($direccion) 
-            ) {
-                $msg = "Todos los campos son obligatorios";
-            } else {
-                $data = $this->model->insertarhotel($id_hotel, $nombre, $direccion);
-                if ($data === "ok") {
-                    $msg = "Hotel registrado";
-                } else {
-                    $msg = "Error";
-                }
-            }
+        public function insertarhotel($id_hotel, $nombre, $direccion)
+    {
+        $sql = "INSERT INTO hotel(id_hotel,nombre,direccion) VALUES (?,?,?)";
+        $datos = array($id_hotel, $nombre, $direccion);
+        $data = $this->save($sql, $datos);
+        if ($data == 1) {
+            $res = "ok";
+        } else {
+            $res = "error";
         }
+        return $res;
+    }
+
+    function editarhotel($id_hotel, $nombre, $direccion)
+{
+  
+    $sql = "UPDATE hotel SET nombre = :nombre, direccion = :direccion
+     WHERE id_ciudad = :id_ciudad";
+    $datos = array($id_hotel, $nombre, $direccion);
+    $data = $this->editar($sql, $datos);
+    return $data;
+    if($data == 1){
+        $res = "ok";
+    } else {
+        $res = "error";
+    }
+  }
+
+  function eliminarhotel($id_hotel)
+  {
+    $sql = "DELETE FROM hotel WHERE id_hotel= :id_hotel";
+    $datos = array($id_hotel);
+    $data = $this->eliminar($sql, $datos);
+    return $data;
+  }
+
+        
  }

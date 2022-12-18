@@ -15,24 +15,45 @@
             $data = $this->selectAll($SQL);
             return $data;
         }
-        public function insertarciudad()
-        {
-            $id_ciudad = ($_POST['id_ciudad']); 
-            $nombre = ($_POST['nombre']);
-            $num_clubes = ($_POST['num_clubes']);
-    
-            if (
-                empty($id_ciudad) || empty($nombre) || empty($num_clubes) 
-            ) {
-                $msg = "Todos los campos son obligatorios";
-            } else {
-                $data = $this->model->insertarciudad($id_ciudad, $nombre, $num_clubes);
-                if ($data === "ok") {
-                    $msg = "Ciudad registrada";
-                } else {
-                    $msg = "Error";
-                }
-            }
+
+        public function insertarciudad($id_ciudad, $nombre, $num_clubes)
+    {
+        $sql = "INSERT INTO ciudad(id_ciudad,nombre,num_clubes) VALUES (?,?,?)";
+        $datos = array($id_ciudad, $nombre, $num_clubes);
+        $data = $this->save($sql, $datos);
+        if ($data == 1) {
+            $res = "ok";
+        } else {
+            $res = "error";
         }
+        return $res;
+    }
+
+    function editarciudad($id_ciudad, $nombre, $num_clubes)
+{
+  
+    $sql = "UPDATE ciudad SET nombre = :nombre, num_clubes = :num_clubes
+     WHERE id_ciudad = :id_ciudad";
+    $datos = array($id_ciudad, $nombre, $num_clubes);
+    $data = $this->editar($sql, $datos);
+    return $data;
+    if($data == 1){
+        $res = "ok";
+    } else {
+        $res = "error";
+    }
+  }
+
+  function eliminarciudad($id_ciudad)
+  {
+    $sql = "DELETE FROM ciudad WHERE id_ciudad= :id_ciudad";
+    $datos = array($id_ciudad);
+    $data = $this->eliminar($sql, $datos);
+    return $data;
+  }
+
+
+    
+        
     }
 ?>
