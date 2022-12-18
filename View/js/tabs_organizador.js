@@ -280,10 +280,23 @@ async function cargarUno(activo, id) {
   } 
 }
 
-function cerrar_sesion()
+async function cerrar_sesion()
 {
   sessionStorage.clear();
-  window.location = "http://localhost/tenisdemesa/";
+  const request = await fetch(
+    "http://localhost/tenisdemesa/Home/salir",
+    {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  if(request.ok)
+  {
+    window.location = "http://localhost/tenisdemesa";
+  }
 }
 
 var groupBy = function (miarray, prop) {
