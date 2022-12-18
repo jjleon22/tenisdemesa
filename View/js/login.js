@@ -37,13 +37,13 @@ async function logeo(e) {
       sessionStorage.setItem("rol", data.rol);
       
       if (data.rol == 1) {
-        window.location = base_url + "administrador";
+        window.location = "administrador";
       } else if (data.rol == 2) {
-        window.location = base_url + "jugador";
+        window.location = "http://localhost/tenisdemesa/jugador/getparticipanteone";
       } else if (data.rol == 3) {
         window.location = base_url + "juez";
       } else if (data.rol == 4) {
-        window.location = "http://localhost/tenisdemesa/Organizador";
+        window.location = "http://localhost/tenisdemesa";
       }
     }
      };

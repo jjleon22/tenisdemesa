@@ -37,6 +37,8 @@ class OrganizadorDAO extends Query
         return $data;
     }
 
+    
+
     public function insertarparticipante($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol)
     {
         $sql = "INSERT INTO participante(numero_asociado,nombre,direccion,nivel_juego,correo,clave,id_rol) VALUES (?,?,?,?,?,?,?)";
