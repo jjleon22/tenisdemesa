@@ -26,11 +26,8 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Nosotros</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Gestion</a>
-            </li>
           </ul>
-          <li style="list-style: none;" id="txt_nombre">nn</li>
+          <li style="list-style: none;" id="txt_nombre">Hola Daniel Torres</li>
           <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
           <button class="btn btn-danger" type="button">
             <a href="index.html" style="text-decoration: none; color:white" onclick="cerrar_sesion()">Cerrar Sesion</a>
@@ -39,6 +36,52 @@
       </div>
     </nav>
     <!--fin navbar-->
+    <div class="container-fluid mt-5">
+        <h3>Tus partidos</h3>
+        <!--contenido administrativo-->
+        <table class="table" id="tbOrganizador">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Juez</th>
+              <th scope="col">Adversario</th>
+              <th scope="col">Marcador</th>
+              <th scope="col">Comentarios</th>
+              <th scope="col">Sala</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <tr>
+              <th scope="row">13</th>
+              <td>2022-12-12 22:00:00&nbsp;&nbsp;</td>
+              <td>20099 - Paco Rabone</td>              
+              <td>Jacob Tomas</td>
+              <td>12-15</td>
+              <td>Partido de incio duro</td>
+              <td>2 </td>
+            </tr>
+
+          </tbody>
+        </table>
+        <h3>Tu Hospedaje</h3>
+        <p>Hotel Sugerido: B de BAKATA</p>
+        <table class="table" id="tbOrganizador">
+          <thead>
+            <tr>
+              <th scope="col">Hotel Elegido</th>
+              <th scope="col">Fecha Entrada</th>
+              <th scope="col">Fecha Salida</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <tr>
+              <th scope="row">Hotel Atrio</th>
+              <td>2022-12-06 18:48:37</td>
+              <td>2022-12-15 18:48:37</td>              
+            </tr>
+          </tbody>
+        </table>
 <!--fin contenido-->
 <script src="<?php echo BASE_URL; ?>View/js/tabs_organizador.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
