@@ -16,7 +16,7 @@
 
         public function insertarcampeonato($nombre, $id_ciudad, $numero_asociado_ganador)
     {
-        $sql = "INSERT INTO campeonato(nombre,id_ciudad,numero_asociado_ganador) VALUES (?,?,?,?)";
+        $sql = "INSERT INTO campeonato(nombre,id_ciudad,numero_asociado_ganador) VALUES (?,?,?)";
         $datos = array($nombre, $id_ciudad, $numero_asociado_ganador);
         $data = $this->save($sql, $datos);
         if ($data == 1) {

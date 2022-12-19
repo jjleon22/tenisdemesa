@@ -21,22 +21,47 @@
 
         public function insertarsala()
         {
-            $id_sala = ($_POST['id_sala']); 
-            $id_hotel = ($_POST['id_hotel']);
-            $capacidad = ($_POST['capacidad']);
+            $_post = json_decode(file_get_contents('php://input'),true);
+            $id_hotel = ($_post['id_hotel']);
+            $capacidad = ($_post['capacidad']);
             
             if (
-                empty($id_sala) || empty($id_hotel) || empty($capacidad) 
+                empty($id_hotel) || empty($capacidad) 
             ) {
                 $msg = "Todos los campos son obligatorios";
             } else {
-                $data = $this->model->insertarsala($id_sala, $id_hotel, $capacidad);
+                $data = $this->model->insertarsala($id_hotel, $capacidad);
                 if ($data === "ok") {
-                    $msg = "Sala registrada";
+                    $sala = $this->model->getSalasOne();
+                    $msg = $sala;
                 } else {
                     $msg = "Error";
                 }
             }
+            echo json_encode($msg, JSON_UNESCAPED_UNICODE);
+            die();
+        }
+
+        public function insertarmediosala()
+        {
+            $_post = json_decode(file_get_contents('php://input'),true);
+            $id_sala = ($_post['id_sala']);
+            $id_medio = ($_post['id_medio']);
+            
+            if (
+                empty($id_sala) || empty($id_medio) 
+            ) {
+                $msg = "Todos los campos son obligatorios";
+            } else {
+                $data = $this->model->insertarmediosala($id_sala, $id_medio);
+                if ($data === "ok") {
+                    $msg = "medio registrado";
+                } else {
+                    $msg = "Error";
+                }
+            }
+            echo json_encode($msg, JSON_UNESCAPED_UNICODE);
+            die();
         }
 
         public function editarsala()

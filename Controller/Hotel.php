@@ -26,9 +26,10 @@
 
         public function insertarhotel()
         {
-            //$id_hotel = ($_POST['id_hotel']); 
-            $nombre = ($_POST['nombre']);
-            $direccion = ($_POST['direccion']);
+            $_post = json_decode(file_get_contents('php://input'),true);
+            //$id_hotel = ($_post['id_hotel']); 
+            $nombre = ($_post['nombre']);
+            $direccion = ($_post['direccion']);
     
             if (
                 empty($nombre) || empty($direccion) 

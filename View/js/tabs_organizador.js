@@ -321,6 +321,7 @@ async function crearRegistro(activo)
 {
   switch(activo)
   {
+    //partido
     case 0:
     {
       let data = {
@@ -357,6 +358,7 @@ async function crearRegistro(activo)
       }
       break;
     }
+    //participante
     case 1:
     {
       let data = {
@@ -388,6 +390,7 @@ async function crearRegistro(activo)
       }
       break;
     }
+    //hotel
     case 2:
     {
       let data = {
@@ -414,11 +417,12 @@ async function crearRegistro(activo)
       }
       break;
     }
+    //ciudad
     case 3:
     {
       let data = {
-        nombre: document.getElementById("nombre_ciudad"),
-        num_clubes: document.getElementById("num_clubes")
+        nombre: document.getElementById("txt_nombre_ciudad_crear").value,
+        num_clubes: document.getElementById("txt_num_clubes_crear").value
       }
       const request = await fetch(
         "http://localhost/tenisdemesa/Ciudad/insertarciudad",
@@ -440,15 +444,16 @@ async function crearRegistro(activo)
       } 
       break;
     }
+    //campeonato
     case 4:
     {
       let data = {
-        nombre: document.getElementById("nombre_campeonato"),
-        id_ciudad: document.getElementById("listaciudad").value.includes("-") ? document.getElementById("listaciudad").value.split(" - ")[0]:document.getElementById("listaciudad").value,
-        numero_asociado_ganador: document.getElementById("listajugador_c").value.includes("-") ? document.getElementById("listajugador_c").value.split(" - ")[0]:document.getElementById("listajugador_c").value,
+        nombre: document.getElementById("txt_nombre_c_crear").value,
+        id_ciudad: document.getElementById("list_ganador_ciudad_crear").value.includes("-") ? document.getElementById("list_ganador_ciudad_crear").value.split(" - ")[0]:document.getElementById("list_ganador_ciudad_crear").value,
+        numero_asociado_ganador: document.getElementById("list_ganador_c_crear").value.includes("-") ? document.getElementById("list_ganador_c_crear").value.split(" - ")[0]:document.getElementById("list_ganador_c_crear").value,
       }
       const request = await fetch(
-        "http://localhost/tenisdemesa/Ciudad/insertarciudad",
+        "http://localhost/tenisdemesa/Campeonato/insertarcampeonato",
         {
           method: 'POST',
           headers: {
@@ -463,6 +468,125 @@ async function crearRegistro(activo)
       
       if (request.ok) {
         $("#modaltabHistoricoCrear").modal('hide')
+      console.log(data2)
+      } 
+      break;
+    }
+    //salas
+    case 5:
+    {
+      let data = {
+        id_hotel: document.getElementById("list_hoteles_sala_crear").value.includes("-") ? document.getElementById("list_hoteles_sala_crear").value.split(" - ")[0]:document.getElementById("list_hoteles_sala_crear").value,
+        capacidad: document.getElementById("txt_capacidad_sala_crear").value,
+      }
+      const request = await fetch(
+        "http://localhost/tenisdemesa/Sala/insertarsala",
+        {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      const data2 = await request.json();
+      console.log(data2);
+      
+      if (request.ok) {
+        let id_sala1 = data2[0]["max"];
+        console.log(id_sala1)
+        if(document.getElementById("chk_tv_crear").checked)
+        {
+          medios = {
+            id_sala : id_sala1,
+            id_medio: 1
+          }
+          const request = await fetch(
+            "http://localhost/tenisdemesa/Sala/insertarmediosala",
+            {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(medios),
+            }
+          );
+        }
+        if(document.getElementById("chk_proyector_crear").checked)
+        {
+          medios = {
+            id_sala : id_sala1,
+            id_medio: 2
+          }
+          const request = await fetch(
+            "http://localhost/tenisdemesa/Sala/insertarmediosala",
+            {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(medios),
+            }
+          );
+        }
+        if(document.getElementById("chk_computador_crear").checked)
+        {
+          medios = {
+            id_sala : id_sala1,
+            id_medio: 3
+          }
+          const request = await fetch(
+            "http://localhost/tenisdemesa/Sala/insertarmediosala",
+            {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(medios),
+            }
+          );
+        }
+        if(document.getElementById("chk_camaras_crear").checked)
+        {
+          medios = {
+            id_sala : id_sala1,
+            id_medio: 4
+          }
+          const request = await fetch(
+            "http://localhost/tenisdemesa/Sala/insertarmediosala",
+            {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(medios),
+            }
+          );
+        }
+        if(document.getElementById("chk_microfono_crear").checked)
+        {
+          medios = {
+            id_sala : id_sala1,
+            id_medio: 5
+          }
+          const request = await fetch(
+            "http://localhost/tenisdemesa/Sala/insertarmediosala",
+            {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(medios),
+            }
+          );
+        }
+        $("#modaltabSalasCrear").modal('hide')
       console.log(data2)
       } 
       break;
@@ -494,10 +618,6 @@ async function getSalas()
     ${lista}
     `;
     document.getElementById("list_sala_crear").innerHTML = `
-    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_sala_partido">
-    ${lista}
-    `;
-    document.getElementById("list_hoteles_sala_crear").innerHTML = `
     <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_sala_partido">
     ${lista}
     `;
@@ -643,6 +763,10 @@ async function getHotelito()
       ${lista}`
       ;*/
       document.getElementById("listahotel_s").innerHTML = `
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listahotel">
+      ${lista}`
+      ;
+      document.getElementById("list_hoteles_sala_crear").innerHTML = `
       <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listahotel">
       ${lista}`
       ;

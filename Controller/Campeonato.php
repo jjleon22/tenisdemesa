@@ -17,10 +17,11 @@ class Campeonato extends Controller
 
     public function insertarcampeonato()
     {
+        $_post = json_decode(file_get_contents('php://input'),true);
         //$id_campeonato = ($_POST['id_campeonato']);
-        $nombre = ($_POST['nombre']);
-        $id_ciudad = ($_POST['id_ciudad']);
-        $numero_asociado_ganador = ($_POST['numero_asociado_ganador']);
+        $nombre = ($_post['nombre']);
+        $id_ciudad = ($_post['id_ciudad']);
+        $numero_asociado_ganador = ($_post['numero_asociado_ganador']);
 
         if (
             empty($nombre) || empty($id_ciudad) || empty($numero_asociado_ganador)
@@ -34,6 +35,8 @@ class Campeonato extends Controller
                 $msg = "Error";
             }
         }
+        echo json_encode($msg, JSON_UNESCAPED_UNICODE);
+        die();
     }
 
     public function editarcampeonato()

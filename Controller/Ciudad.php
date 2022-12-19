@@ -22,9 +22,10 @@
 
         public function insertarciudad()
         {
+            $_post = json_decode(file_get_contents('php://input'),true);
             //$id_ciudad = ($_POST['id_ciudad']); 
-            $nombre = ($_POST['nombre']);
-            $num_clubes = ($_POST['num_clubes']);
+            $nombre = ($_post['nombre']);
+            $num_clubes = intval($_post['num_clubes']);
     
             if (
                 empty($nombre) || empty($num_clubes) 
@@ -38,6 +39,8 @@
                     $msg = "Error";
                 }
             }
+            echo json_encode($msg, JSON_UNESCAPED_UNICODE);
+            die();
         }
 
         public function editarciudad()

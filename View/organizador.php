@@ -324,7 +324,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary" onclick="crearRegistro(2)">Guardar Cambios</button>
+              <button type="button" class="btn btn-primary">Guardar Cambios</button>
             </div>
           </div>
         </div>
@@ -409,7 +409,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary" onclick="crearRegistro(3)">Guardar Cambios</button>
+              <button type="button" class="btn btn-primary">Guardar Cambios</button>
             </div>
           </div>
         </div>
@@ -464,7 +464,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" crearRegistro(4)>Save changes</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
@@ -662,7 +662,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" onclick="crearRegistro(2)">Save changes</button>
             </div>
           </div>
         </div>
@@ -719,7 +719,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" onclick="crearRegistro(5)">Save changes</button>
             </div>
           </div>
         </div>
@@ -736,18 +736,18 @@
             <div class="modal-body">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Nombre</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="txt_nombre_ciudad_crear">
+                <input type="text" class="form-control" placeholder="nombre" aria-label="Nombre" aria-describedby="basic-addon1" id="txt_nombre_ciudad_crear">
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"># Clubes</span>
-                <input type="number" class="form-control" placeholder="Direccion" aria-label="Direccion" aria-describedby="basic-addon1" id="txt_num_clubes_crear">
+                <input type="number" class="form-control" aria-label="" aria-describedby="basic-addon1" id="txt_num_clubes_crear">
               </div>
 
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" onclick="crearRegistro(3)">Save changes</button>
             </div>
           </div>
         </div>
@@ -802,7 +802,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" onclick="crearRegistro(4)">Save changes</button>
             </div>
           </div>
         </div>

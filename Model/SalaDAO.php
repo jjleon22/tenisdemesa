@@ -13,6 +13,13 @@ class SalaDAO extends Query
         return $data;
     }
 
+    public function getSalasOne()
+    {
+        $SQL = "SELECT max(id_sala) FROM sala";
+        $data = $this->selectAll($SQL);
+        return $data;
+    }
+
     public function getSalas()
     {
         $SQL = "SELECT s.id_sala AS \"Número Sala\", 
@@ -27,10 +34,23 @@ class SalaDAO extends Query
         return $data;
     }
 
-    public function insertarsala($id_sala, $id_hotel, $capacidad)
+    public function insertarsala($id_hotel, $capacidad)
     {
-        $sql = "INSERT INTO sala(id_sala,id_hotel,capacidad) VALUES (?,?,?)";
-        $datos = array($id_sala, $id_hotel, $capacidad);
+        $sql = "INSERT INTO sala(id_hotel,capacidad) VALUES (?,?)";
+        $datos = array($id_hotel, $capacidad);
+        $data = $this->save($sql, $datos);
+        if ($data == 1) {
+            $res = "ok";
+        } else {
+            $res = "error";
+        }
+        return $res;
+    }
+
+    public function insertarmediosala($id_sala, $id_medio)
+    {
+        $sql = "INSERT INTO medios_sala(id_sala,id_medio) VALUES (?,?)";
+        $datos = array($id_sala, $id_medio);
         $data = $this->save($sql, $datos);
         if ($data == 1) {
             $res = "ok";
