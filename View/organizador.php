@@ -166,24 +166,10 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Sala</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="id_sala">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_sala_partido">
                 <option value="1" selected>Sala seleccionada</option>
-                    <!-- Consulta de id salas -->
-                  <?/*php include('/Controller/Partido.php'); 
-                  while(getSalas() return true)
-                  {
-                    ?>
-                    <option value="<?php getSalas('id_sala')?>"><?php getSalas('id_sala')?></option>
-                    <?php
-                  }*/
-                  ?>
-
-                  
-                  
                   <option value="3">2</option>
                   <option value="4">3</option>
-                  
-                  
                 </select>
                 <span class="input-group-text" id="basic-addon4">Entradas vendidas</span>
                 <input type="number" class="form-control" id="num_entradas_vendidas" aria-describedby="basic-addon3">

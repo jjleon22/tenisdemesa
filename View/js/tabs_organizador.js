@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   pillActive(0);
   document.getElementById("txt_nombre").innerHTML = `
   <li style="list-style: none;" id="txt_nombre">${sessionStorage.getItem("nombre")}</li>`
+  getSalas();
 });
 
 let pestanaActiva = 0;
@@ -369,5 +370,31 @@ async function crearRegistro(activo)
     {
       break;
     }
+  }
+}
+
+async function getSalas()
+{
+  const request = await fetch(
+    "http://localhost/tenisdemesa/Sala/getSalas1",
+    {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  if(request.ok)
+  {
+    data = await request.json();
+    lista = "";
+    data.forEach((i)=>{
+      lista += `<option value="${i["id_sala"]}">${i["id_sala"]}</option>`
+    })
+    document.getElementById("lst_sala_partido").innerHTML = `
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_sala_partido">
+    ${lista}
+    `;
   }
 }

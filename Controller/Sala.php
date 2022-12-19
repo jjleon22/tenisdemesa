@@ -4,6 +4,14 @@
         {
             parent::__construct();
         }
+
+        public function getSalas1()
+        {
+            $data = $this->model->getSalas1();
+            echo json_encode($data,JSON_UNESCAPED_UNICODE);
+            die();//terminar peticion
+        }
+
         public function getSalas()
         {
             $data = $this->model->getSalas();
