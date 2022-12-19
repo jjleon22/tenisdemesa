@@ -44,7 +44,7 @@
             $clave = ($_post['clave']);
             $id_rol = intval(($_post['id_rol']));
             
-            print_r($_post);
+            //print_r($_post);
             if (
                 empty($id_rol) || empty($nombre) || empty($direccion) || empty($nivel_de_juego) || empty($correo) ||
                 empty($clave) || empty($id_ciudad)

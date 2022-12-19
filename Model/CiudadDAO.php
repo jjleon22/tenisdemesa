@@ -23,10 +23,10 @@
         return $data;
     }
 
-        public function insertarciudad($id_ciudad, $nombre, $num_clubes)
+        public function insertarciudad($nombre, $num_clubes)
     {
-        $sql = "INSERT INTO ciudad(id_ciudad,nombre,num_clubes) VALUES (?,?,?)";
-        $datos = array($id_ciudad, $nombre, $num_clubes);
+        $sql = "INSERT INTO ciudad(nombre,num_clubes) VALUES (?,?)";
+        $datos = array($nombre, $num_clubes);
         $data = $this->save($sql, $datos);
         if ($data == 1) {
             $res = "ok";

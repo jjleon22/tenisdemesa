@@ -17,17 +17,17 @@ class Campeonato extends Controller
 
     public function insertarcampeonato()
     {
-        $id_campeonato = ($_POST['id_campeonato']);
+        //$id_campeonato = ($_POST['id_campeonato']);
         $nombre = ($_POST['nombre']);
         $id_ciudad = ($_POST['id_ciudad']);
         $numero_asociado_ganador = ($_POST['numero_asociado_ganador']);
 
         if (
-            empty($id_campeonato) || empty($nombre) || empty($id_ciudad) || empty($numero_asociado_ganador)
+            empty($nombre) || empty($id_ciudad) || empty($numero_asociado_ganador)
         ) {
             $msg = "Todos los campos son obligatorios";
         } else {
-            $data = $this->model->insertarcampeonato($id_campeonato, $nombre, $id_ciudad, $numero_asociado_ganador);
+            $data = $this->model->insertarcampeonato($nombre, $id_ciudad, $numero_asociado_ganador);
             if ($data === "ok") {
                 $msg = "Campeonato registrado";
             } else {

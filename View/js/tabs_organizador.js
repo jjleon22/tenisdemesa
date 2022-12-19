@@ -390,18 +390,81 @@ async function crearRegistro(activo)
     }
     case 2:
     {
+      let data = {
+        nombre: document.getElementById("txt_nombre_h_crear").value,
+        direccion: document.getElementById("txt_direccion_h_crear").value
+      }
+      const request = await fetch(
+        "http://localhost/tenisdemesa/Hotel/insertarhotel",
+        {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      const data2 = await request.json();
+      //console.log(data2);
+      
+      if (request.ok) {
+        $("#modaltabHotelCrear").modal('hide')
+      console.log(data2)
+      }
       break;
     }
     case 3:
     {
+      let data = {
+        nombre: document.getElementById("nombre_ciudad"),
+        num_clubes: document.getElementById("num_clubes")
+      }
+      const request = await fetch(
+        "http://localhost/tenisdemesa/Ciudad/insertarciudad",
+        {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      const data2 = await request.json();
+      //console.log(data2);
+      
+      if (request.ok) {
+        $("#modaltabCiudadCrear").modal('hide')
+      console.log(data2)
+      } 
       break;
     }
     case 4:
     {
-      break;
-    }
-    case 5:
-    {
+      let data = {
+        nombre: document.getElementById("nombre_campeonato"),
+        id_ciudad: document.getElementById("listaciudad").value.includes("-") ? document.getElementById("listaciudad").value.split(" - ")[0]:document.getElementById("listaciudad").value,
+        numero_asociado_ganador: document.getElementById("listajugador_c").value.includes("-") ? document.getElementById("listajugador_c").value.split(" - ")[0]:document.getElementById("listajugador_c").value,
+      }
+      const request = await fetch(
+        "http://localhost/tenisdemesa/Ciudad/insertarciudad",
+        {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      const data2 = await request.json();
+      //console.log(data2);
+      
+      if (request.ok) {
+        $("#modaltabHistoricoCrear").modal('hide')
+      console.log(data2)
+      } 
       break;
     }
   }
@@ -427,6 +490,14 @@ async function getSalas()
       lista += `<option value="${i["id_sala"]}">${i["id_sala"]}</option>`
     })
     document.getElementById("lst_sala_partido").innerHTML = `
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_sala_partido">
+    ${lista}
+    `;
+    document.getElementById("list_sala_crear").innerHTML = `
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_sala_partido">
+    ${lista}
+    `;
+    document.getElementById("list_hoteles_sala_crear").innerHTML = `
     <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_sala_partido">
     ${lista}
     `;
@@ -456,6 +527,10 @@ async function getParticipante1()
       <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_jueces">
       ${lista}
       `;
+      document.getElementById("list_juez_crear").innerHTML = `
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_jueces">
+      ${lista}
+      `;
     }
     
 }
@@ -482,7 +557,22 @@ async function getJugador()
       document.getElementById("listajugador").innerHTML = `
       <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador">
       ${lista}`
+      document.getElementById("listajugador_c").innerHTML = `
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador">
+      ${lista}`
       document.getElementById("listajugador2").innerHTML = 
+      `<select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador2">
+      ${lista}
+      `;
+      document.getElementById("list_j1_crear").innerHTML = 
+      `<select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador2">
+      ${lista}
+      `;
+      document.getElementById("list_j2_crear").innerHTML = 
+      `<select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador2">
+      ${lista}
+      `;
+      document.getElementById("list_ganador_c_crear").innerHTML = 
       `<select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador2">
       ${lista}
       `;
@@ -514,6 +604,14 @@ async function getCiudad()
       ${lista}`
       ;
       document.getElementById("listaciudad_p").innerHTML = `
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listaciudad">
+      ${lista}`
+      ;
+      document.getElementById("list_ciudad_p_crear").innerHTML = `
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listaciudad">
+      ${lista}`
+      ;
+      document.getElementById("list_ganador_ciudad_crear").innerHTML = `
       <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listaciudad">
       ${lista}`
       ;

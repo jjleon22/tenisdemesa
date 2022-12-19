@@ -172,7 +172,7 @@
                   <option value="4">3</option>
                 </select>
                 <span class="input-group-text" id="basic-addon4">Entradas vendidas</span>
-                <input type="number" class="form-control" id="num_entradas_vendidas" aria-describedby="basic-addon3">
+                <input type="number" class="form-control" id="txt_entradas" aria-describedby="basic-addon3">
               </div>
 
               <div class="input-group mb-3">
@@ -210,9 +210,9 @@
               <label for="basic-url" class="form-label">Marcador del partido</label>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon4">Juagdor 1</span>
-                <input type="number" class="form-control" id="marcador" aria-describedby="basic-addon3">
+                <input type="number" class="form-control" id="txt_marcador_j1" aria-describedby="basic-addon3">
                 <span class="input-group-text" id="basic-addon4">Juagdor 2</span>
-                <input type="number" class="form-control" id="marcador" aria-describedby="basic-addon3">
+                <input type="number" class="form-control" id="txt_marcador_j2" aria-describedby="basic-addon3">
               </div>
 
               <label for="basic-url" class="form-label">Ganador del partido</label>
@@ -324,7 +324,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Guardar Cambios</button>
+              <button type="button" class="btn btn-primary" onclick="crearRegistro(2)">Guardar Cambios</button>
             </div>
           </div>
         </div>
@@ -409,7 +409,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Guardar Cambios</button>
+              <button type="button" class="btn btn-primary" onclick="crearRegistro(3)">Guardar Cambios</button>
             </div>
           </div>
         </div>
@@ -426,7 +426,7 @@
             <div class="modal-body">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Titulo</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="nombre" value="PP 1">
+                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="nombre_campeonato" value="PP 1">
               </div>
 
               <div class="input-group mb-3">
@@ -447,7 +447,7 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Ganador</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador_c">
                   <option value="1" selected>20003 - Camilo Cruz</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -464,7 +464,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" crearRegistro(4)>Save changes</button>
             </div>
           </div>
         </div>
@@ -753,7 +753,7 @@
         </div>
       </div>
       <!--fin modal Ciudad-->
-       <!-- Modal Campeonato -->
+       <!-- Modal Crear Campeonato -->
        <div class="modal fade modal-xl" id="modaltabHistoricoCrear" tabindex="-1" aria-labelledby="modaltabHistoricoCrear" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -769,7 +769,7 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Ciudad</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_ganador_c_crear">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_ganador_ciudad_crear">
                   <option value="1" selected>3 - Cucuta</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -807,7 +807,7 @@
           </div>
         </div>
       </div>
-      <!--fin modal campeonato-->
+      <!--fin modal crear campeonato-->
     </div>
     <!--fin contenido-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

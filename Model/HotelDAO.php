@@ -20,10 +20,10 @@
         return $data;
     }
 
-        public function insertarhotel($id_hotel, $nombre, $direccion)
+        public function insertarhotel($nombre, $direccion)
     {
-        $sql = "INSERT INTO hotel(id_hotel,nombre,direccion) VALUES (?,?,?)";
-        $datos = array($id_hotel, $nombre, $direccion);
+        $sql = "INSERT INTO hotel(nombre,direccion) VALUES (?,?)";
+        $datos = array($nombre, $direccion);
         $data = $this->save($sql, $datos);
         if ($data == 1) {
             $res = "ok";

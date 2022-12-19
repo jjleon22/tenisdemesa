@@ -26,22 +26,24 @@
 
         public function insertarhotel()
         {
-            $id_hotel = ($_POST['id_hotel']); 
+            //$id_hotel = ($_POST['id_hotel']); 
             $nombre = ($_POST['nombre']);
             $direccion = ($_POST['direccion']);
     
             if (
-                empty($id_hotel) || empty($nombre) || empty($direccion) 
+                empty($nombre) || empty($direccion) 
             ) {
                 $msg = "Todos los campos son obligatorios";
             } else {
-                $data = $this->model->insertarhotel($id_hotel, $nombre, $direccion);
+                $data = $this->model->insertarhotel($nombre, $direccion);
                 if ($data === "ok") {
                     $msg = "Hotel registrado";
                 } else {
                     $msg = "Error";
                 }
             }
+            echo json_encode($data,JSON_UNESCAPED_UNICODE);
+            die();//terminar peticion
         }
 
         public function editarhotel()
