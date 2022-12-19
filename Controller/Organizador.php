@@ -20,30 +20,32 @@
     
         public function insertarparticipante()
         {
-            $id = ($_POST['numero_asociado']); 
-            $nombre = ($_POST['nombre']);
-            $direccion = ($_POST['direccion']);
-            $nivel_juego = ($_POST['nivel_juego']);
-            $correo = ($_POST['correo']);
-            $clave = intval(($_POST['clave']));
-            $id_rol = intval(($_POST['id_rol']));
-    
-    
-            echo var_dump($id_rol);
-    
+            $_post = json_decode(file_get_contents('php://input'),true);
+            //$id = ($_post['numero_asociado']); 
+            $nombre = ($_post['nombre']);
+            $direccion = ($_post['direccion']);
+            $nivel_de_juego = intval($_post['nivel_de_juego']);
+            $correo = ($_post['correo']);
+            $id_ciudad = intval($_post['id_ciudad']);
+            $clave = ($_post['clave']);
+            $id_rol = intval(($_post['id_rol']));
+            
+            print_r($_post);
             if (
-                empty($id_rol) || empty($nombre) || empty($direccion) || empty($nivel_juego) || empty($correo) ||
-                empty($clave) || empty($id_rol)
+                empty($id_rol) || empty($nombre) || empty($direccion) || empty($nivel_de_juego) || empty($correo) ||
+                empty($clave) || empty($id_ciudad)
             ) {
                 $msg = "Todos los campos son obligatorios";
             } else {
-                $data = $this->model->insertarparticipante($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol);
+                $data = $this->model->insertarparticipante($nombre, $direccion, $nivel_de_juego, $correo, $clave, $id_ciudad, $id_rol);
                 if ($data === "ok") {
                     $msg = "Participante registrado";
                 } else {
                     $msg = "Error";
                 }
             }
+            echo json_encode($msg,JSON_UNESCAPED_UNICODE);
+            die();//terminar peticion
         }
 
         public function editarparticipante()

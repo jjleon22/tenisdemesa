@@ -613,17 +613,27 @@
                 </select>
                 <span class="input-group-text" id="basic-addon5">Ciudad</span>
                 <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_ciudad_p_crear">
-                  <option value="20008 - Paco Rabone" selected>1 - Cali</option>
-                  <option value="20010 - Paco Rabone">1</option>
-                  <option value="20009 - Paco Rabone">20009 - Paco Rabone</option>
+                  <option value="1 - Cali" selected>1 - Cali</option>
+                  <option value="2">1</option>
+                  <option value="3">20009 - Paco Rabone</option>
                   <option value="4">3</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Clave</span>
+                <input type="password" class="form-control" placeholder="clave" aria-label="clave" aria-describedby="basic-addon1" id="txt_clave_p_crear">
+                <span class="input-group-text" id="basic-addon5">Rol</span>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_rol_p_crear">
+                  <option value="2" selected>Organizador</option>
+                  <option value="3">Juez</option>
+                  <option value="4">Participante</option>
                 </select>
               </div>
 
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Crear</button>
+              <button type="button" class="btn btn-primary" onclick="crearRegistro(1)">Crear</button>
             </div>
           </div>
         </div>

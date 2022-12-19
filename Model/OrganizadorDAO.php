@@ -39,10 +39,10 @@ class OrganizadorDAO extends Query
 
     
 
-    public function insertarparticipante($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol)
+    public function insertarparticipante($nombre, $direccion, $nivel_de_juego, $correo, $clave, $id_ciudad, $id_rol)
     {
-        $sql = "INSERT INTO participante(numero_asociado,nombre,direccion,nivel_juego,correo,clave,id_rol) VALUES (?,?,?,?,?,?,?)";
-        $datos = array($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol);
+        $sql = "INSERT INTO participante(nombre,direccion,nivel_de_juego,correo,clave,id_ciudad,id_rol) VALUES (?,?,?,?,?,?,?)";
+        $datos = array($nombre, $direccion, $nivel_de_juego, $correo, $clave, $id_ciudad, $id_rol);
         $data = $this->save($sql, $datos);
         if ($data == 1) {
             $res = "ok";
@@ -52,13 +52,13 @@ class OrganizadorDAO extends Query
         return $res;
     }
 
-    function editarparticipante($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol)
+    function editarparticipante($id, $nombre, $direccion, $nivel_de_juego, $correo, $clave, $id_rol)
     {
 
-        $sql = "UPDATE participante SET nombre = :nombre, direccion = :direccion, nivel_juego = :nivel_juego,
+        $sql = "UPDATE participante SET nombre = :nombre, direccion = :direccion, nivel_juego = :nivel_de_juego,
     correo = :correo, clave = :clave, id_rol = :id_rol
      WHERE numero_asociado = :numero_asociado";
-        $datos = array($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol);
+        $datos = array($id, $nombre, $direccion, $nivel_de_juego, $correo, $clave, $id_rol);
         $data = $this->editar($sql, $datos);
         return $data;
         if ($data == 1) {

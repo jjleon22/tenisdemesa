@@ -353,6 +353,33 @@ async function crearRegistro(activo)
     }
     case 1:
     {
+      let data = {
+        nombre: document.getElementById("txt_nombre_p_crear").value,
+        direccion: document.getElementById("txt_direccion_p_crear").value,
+        nivel_de_juego: document.getElementById("list_nivel_p_crear").value,
+        correo: document.getElementById("txt_email_p_crear").value,
+        clave: document.getElementById("txt_clave_p_crear").value,
+        id_ciudad: document.getElementById("list_ciudad_p_crear").value.includes("-") ? document.getElementById("list_ciudad_p_crear").value.split(" - ")[0]:document.getElementById("list_ciudad_p_crear").value,
+        id_rol: document.getElementById("list_rol_p_crear").value
+      }
+      const request = await fetch(
+        "http://localhost/tenisdemesa/Organizador/insertarparticipante",
+        {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      const data2 = await request.json();
+      //console.log(data2);
+      
+      if (request.ok) {
+        $("#modaltabParticipantesCrear").modal('hide')
+      console.log(data2)
+      }
       break;
     }
     case 2:
