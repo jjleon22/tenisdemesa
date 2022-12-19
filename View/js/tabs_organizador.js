@@ -92,7 +92,7 @@ async function cargarTabla(activo) {
         valores += `<td>${j["Capacidad"]}</td>`;
         let id = j[encabezados[0]];
       
-      valores += `<td><button class="btn btn-warning" type="button" onclick="cargarUno(${activo},${id})" data-bs-toggle="modal" data-bs-target="#modal${activo}">
+      valores += `<td><button class="btn btn-warning" type="button" onclick="cargarUno('${activo}',${id})" data-bs-toggle="modal" data-bs-target="#modal${activo}">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -149,7 +149,7 @@ async function cargarTabla(activo) {
       //suponiendo que el id simpre va a llegar de primeras
       let id = i[encabezados[0]];
       
-      valores += `<td><button class="btn btn-warning" type="button" onclick="cargarUno(${activo},${id})" data-bs-toggle="modal" data-bs-target="#modal${activo}">
+      valores += `<td><button class="btn btn-warning" type="button" onclick="cargarUno('${activo}',${id})" data-bs-toggle="modal" data-bs-target="#modal${activo}">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
       <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -193,68 +193,79 @@ async function cargarUno(activo, id) {
     tabCiudad: "Ciudad/getCiudad",
     tabHistorico: "Campeonato/getCampeonato",
   };
-
-  try {
+  
+  console.log(activo)
+  
     const request = await fetch(
-      `http://localhost/tenisdemesa/${elegirTabla[activo]}/${id}`,
+      `http://localhost/tenisdemesa/${elegirTabla[activo]}`,
       {
-        method: "GET",
+        method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-        },
+        },body: JSON.stringify({"id":id}),
       }
     );
-
-    const data = response.json();
-    console.log(request.url);
+  if(request.ok)
+  {
+    const data = await request.json();
     console.log(data);
-  } catch (error) {
-    console.log(error);
-  }
-
-  //datos tmp truncados
-
-  const data = {
-    "Comentarios": "El ganador empezo con ventaja",
-    "Entradas Vendidas": 50,
-    "Fecha": "2022-12-12 22:00:00",
-    "Juez":"20009 - Paco Rabone",
-    "Jugador 1": "20000 - Juan Tenerife",
-    "Jugador 2":"20002 - Crespo Young",
-    "Marcador":"15-13",
-    "Sala":4,
-    "id": 4,
-    "numero_asociado_ganador":20000
-  }
-
   if(activo = "tabPartidos")
   {
-    let txt_marcador = document.getElementById("txt_marcador_j1") + "-" +document.getElementById("txt_marcador_j2");
+    let txt_id_partido = document.getElementById("txt_id_partido");
     let dt_fecha = document.getElementById("fecha_de_juego");
-    let list_sala = document.getElementById("list_sala");
+    let list_sala = document.getElementById("lst_sala_partido");
     let txt_entradas = document.getElementById("txt_entradas");
-    let list_juez = document.getElementById("lst_jueces");
-    let list_j1 = document.getElementById("listajugador");
-    let list_j2 = document.getElementById("listajugador2");
-    let txt_j1 = document.getElementById("txt_j1");
-    let txt_j2 = document.getElementById("txt_j2");
+    let list_juez = document.getElementById("lst_jueces").options;
+    let list_j1 = document.getElementById("listajugador").options;
+    let list_j2 = document.getElementById("listajugador2").options;
     let chk_j1 = document.getElementById("chk_j1");
     let chk_j2 = document.getElementById("chk_j2");
+    let txt_marcador_j1 = document.getElementById("txt_marcador_j1");
+    let txt_marcador_j2 = document.getElementById("txt_marcador_j2");
     let txt_comentarios = document.getElementById("txt_comentarios");
-    let txt_id_partido = document.getElementById("txt_id_partido");
 
-    txt_id_partido.value = data["id"];
-    dt_fecha.value = data["Fecha"];
-    list_sala.value = data["Sala"];
-    txt_entradas.value = data["Entradas Vendidas"];
-    list_juez.value = data["Juez"];
-    list_j1.value = data["Jugador 1"];
-    list_j2.value = data["Jugador 2"];
-    txt_j1.value = data["Marcador"].split("-")[0];
-    txt_j2.value = data["Marcador"].split("-")[1];
-    txt_comentarios.value = data["Comentarios"];
-    if(list_j1.value.includes(data["numero_asociado_ganador"]))
+    txt_id_partido.value = data["id_partido"];
+    dt_fecha.value = data["fecha_de_juego"].split(" ")[0];
+    list_sala.value = data["id_sala"];
+    txt_entradas.value = data["num_entradas_vendidas"];
+    //juez
+    for (const i in list_juez) {
+      if(list_juez[i]["label"] == undefined)
+        break
+      console.log(list_juez[i]["label"])
+      if(list_juez[i]["label"].includes(data["numero_asociado_juez"]))
+      {
+        document.getElementById("lst_jueces").value=list_juez[i]["label"]
+      }
+    }
+    //j1
+    for (const i in list_j1) {
+      console.log(list_j1[i]["label"])
+      if(list_j1[i]["label"] == undefined)
+        break
+      if(list_j1[i]["label"].includes(data["numero_asociado_jugador1"]))
+      {
+        document.getElementById("listajugador").value=list_j1[i]["label"]
+      }
+    }
+    //j2
+    for (const i in list_j2) {
+      if(list_j2[i]["label"] == undefined)
+        break
+      console.log(list_j2[i]["label"])
+      if(list_j2[i]["label"].includes(data["numero_asociado_jugador2"]))
+      {
+        document.getElementById("listajugador2").value=list_j2[i]["label"]
+      }
+    }
+    //list_juez.value = data["numero_asociado_juez"];
+    //list_j1.value = data["numero_asociado_jugador1"];
+    //list_j2.value = data["numero_asociado_jugador2"];
+    txt_marcador_j1.value = data["marcador"].split("-")[0];
+    txt_marcador_j2.value = data["marcador"].split("-")[1];
+    txt_comentarios.value = data["comenatrios"];
+    if(data["numero_asociado_jugador1"]==data["numero_asociado_ganador"])
     {
       chk_j1.checked = true;
       chk_j2.checked = false;
@@ -285,6 +296,24 @@ async function cargarUno(activo, id) {
   {
     
   } 
+  }
+
+  //datos tmp truncados
+
+  /*const data = {
+    "Comentarios": "El ganador empezo con ventaja",
+    "Entradas Vendidas": 50,
+    "Fecha": "2022-12-12 22:00:00",
+    "Juez":"20009 - Paco Rabone",
+    "Jugador 1": "20000 - Juan Tenerife",
+    "Jugador 2":"20002 - Crespo Young",
+    "Marcador":"15-13",
+    "Sala":4,
+    "id": 4,
+    "numero_asociado_ganador":20000
+  }*/
+
+  
 }
 
 async function cerrar_sesion()
@@ -773,3 +802,41 @@ async function getHotelito()
     }
     
 }
+
+async function editarPartido()
+{
+  let data = {
+    id_partido: document.getElementById("txt_id_partido").value,
+    fecha_de_juego:document.getElementById("fecha_de_juego").value + " 00:00:00",
+    id_sala: document.getElementById("list_sala_crear").value,
+    num_entradas_vendidas: document.getElementById("txt_entradas").value ||0,
+    numero_asociado_juez: document.getElementById("lst_jueces").value.includes("-") ? document.getElementById("lst_jueces").value.split(" - ")[0]:document.getElementById("lst_jueces").value,
+    numero_asociado_jugador1: document.getElementById("listajugador").value.includes("-") ? document.getElementById("listajugador").value.split(" - ")[0]:document.getElementById("listajugador").value,
+    numero_asociado_jugador2: document.getElementById("listajugador2").value.includes("-") ? document.getElementById("listajugador2").value.split(" - ")[0]:document.getElementById("listajugador2").value,
+    numero_asociado_ganador: "",
+    marcador: document.getElementById("txt_marcador_j1").value + "-" + document.getElementById("txt_marcador_j2").value || "0-0",
+    comenatrios: document.getElementById("txt_comentarios").value
+  }
+  data.numero_asociado_ganador = document.getElementById("chk_j1").checked ? data.numero_asociado_jugador1 : data.numero_asociado_jugador2;
+  const request = await fetch(
+    "http://localhost/tenisdemesa/Partido/editarpartido",
+    {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }
+  );
+
+  const data2 = await request.json();
+  //console.log(data2);
+  
+  if (request.ok) {
+    $("#modaltabPartidos").modal('hide');
+  console.log(data2)
+  }
+
+}
+

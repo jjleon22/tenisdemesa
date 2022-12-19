@@ -21,6 +21,49 @@
             $data = $this->selectAll($SQL);
             return $data;
         }
+        
+        public function getPartido($id_partido)
+        {
+            $SQL = "SELECT * FROM partido NATURAL JOIN resultado_partido WHERE id_partido=".$id_partido.";";
+            $data = $this->select($SQL);
+            return $data;
+        }
+
+        public function getPartidoP($id)
+        {
+            $SQL = "SELECT p.id_partido AS \"ID Partido\", 
+            p.fecha_de_juego AS \"Fecha\", 
+            p.id_sala AS \"Sala\",
+            p.num_entradas_vendidas AS \"Entradas Vendidas\",
+            concat(r.numero_asociado_juez, ' - ' ,j.nombre) AS \"Juez\",
+            concat(r.numero_asociado_jugador1, ' - ' ,(SELECT nombre from participante WHERE numero_asociado=numero_asociado_jugador1)) AS \"Jugador 1\",
+            concat(r.numero_asociado_jugador2, ' - ' ,(SELECT nombre from participante WHERE numero_asociado=numero_asociado_jugador2)) AS \"Jugador 2\",
+            r.numero_asociado_ganador,
+            r.marcador AS \"Marcador\", r.comenatrios AS \"Comentarios\"
+            FROM partido p NATURAL JOIN resultado_partido r
+            JOIN participante j ON r.numero_asociado_juez = j.numero_asociado
+            WHERE r.numero_asociado_juez=".$id." ORDER BY p.fecha_de_juego ASC;";
+            $data = $this->selectAll($SQL);
+            return $data;
+        }
+
+        public function getPartidoJ($id)
+        {
+            $SQL = "SELECT p.id_partido AS \"ID Partido\", 
+            p.fecha_de_juego AS \"Fecha\", 
+            p.id_sala AS \"Sala\",
+            p.num_entradas_vendidas AS \"Entradas Vendidas\",
+            concat(r.numero_asociado_juez, ' - ' ,j.nombre) AS \"Juez\",
+            concat(r.numero_asociado_jugador1, ' - ' ,(SELECT nombre from participante WHERE numero_asociado=numero_asociado_jugador1)) AS \"Jugador 1\",
+            concat(r.numero_asociado_jugador2, ' - ' ,(SELECT nombre from participante WHERE numero_asociado=numero_asociado_jugador2)) AS \"Jugador 2\",
+            r.numero_asociado_ganador,
+            r.marcador AS \"Marcador\", r.comenatrios AS \"Comentarios\"
+            FROM partido p NATURAL JOIN resultado_partido r
+            JOIN participante j ON r.numero_asociado_juez = j.numero_asociado
+            WHERE r.numero_asociado_jugador1=".$id." OR r.numero_asociado_jugador2=".$id." ORDER BY p.fecha_de_juego ASC;";
+            $data = $this->selectAll($SQL);
+            return $data;
+        }
 
         public function getPartidoRes($fecha_de_juego, $id_sala, $num_entradas_vendidas)
         {
@@ -64,9 +107,9 @@
     function editarpartido($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas)
 {
   
-    $sql = "UPDATE partido SET fecha_de_juego = :fecha_de_juego, id_sala = :id_sala, num_entradas_vendidas = :num_entradas_vendidas
+    $sql = "UPDATE partido SET id_sala = :id_sala, num_entradas_vendidas = :num_entradas_vendidas
      WHERE id_partido = :id_partido";
-    $datos = array($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas);
+    $datos = array($id_partido, $id_sala, $num_entradas_vendidas);
     $data = $this->editar($sql, $datos);
     return $data;
     if($data == 1){
@@ -74,6 +117,7 @@
     } else {
         $res = "error";
     }
+    return $res;
   }
 
   function editarresultado($id_partido, $numero_asociado_juez, $numero_asociado_jugador1, 
@@ -92,6 +136,7 @@
     } else {
         $res = "error";
     }
+    return $res;
   }
 
   function eliminarpartido($id_partido)
