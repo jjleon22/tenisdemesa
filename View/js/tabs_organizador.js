@@ -321,7 +321,7 @@ async function crearRegistro(activo)
         fecha_de_juego: document.getElementById("dt_fecha_crear").value,
         id_sala: document.getElementById("list_sala_crear").value,
         num_entradas_vendidas: document.getElementById("txt_entradas").value ||0,
-        numero_asociado_juez: document.getElementById("list_juez_crear").value,
+        numero_asociado_juez: document.getElementById("list_juez_crear").value.includes("-") ? document.getElementById("list_juez_crear").value.split(" - ")[0]:document.getElementById("list_juez_crear").value,
         numero_asociado_jugador1: document.getElementById("list_j1_crear").value.includes("-") ? document.getElementById("list_j1_crear").value.split(" - ")[0]:document.getElementById("list_j1_crear").value,
         numero_asociado_jugador2: document.getElementById("list_j2_crear").value.includes("-") ? document.getElementById("list_j2_crear").value.split(" - ")[0]:document.getElementById("list_j2_crear").value,
         numero_asociado_ganador: "",
@@ -345,7 +345,8 @@ async function crearRegistro(activo)
       const data2 = await request.json();
       //console.log(data2);
       
-      if (request.ok && request.status == 200) {
+      if (request.ok) {
+        $("#modaltabPartidosCrear").modal('hide');
       console.log(data2)
       }
       break;
