@@ -17,6 +17,13 @@
             echo json_encode($data,JSON_UNESCAPED_UNICODE);
             die();//terminar peticion
         }
+
+        public function getParticipante1()
+        {
+            $data = $this->model->getParticipante1();
+            echo json_encode($data,JSON_UNESCAPED_UNICODE);
+            die();//terminar peticion
+        }
     
         public function insertarparticipante()
         {

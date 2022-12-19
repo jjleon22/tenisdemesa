@@ -168,21 +168,6 @@
                 <span class="input-group-text" id="basic-addon3">Sala</span>
                 <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_sala_partido">
                 <option value="1" selected>Sala seleccionada</option>
-<<<<<<< HEAD
-                    <!-- Consulta de id salas -->
-                  <?php /*require '/Controller/Sala.php'; 
-                  foreach( as $row)
-                  {
-                    ?>
-                    <option value="<?php echo $row['id_sala']?>"><?php echo $row['id_sala']?></option>
-                    <?php
-                  }*/
-                  ?>
-
-                  
-                  
-=======
->>>>>>> checho2
                   <option value="3">2</option>
                   <option value="4">3</option>
                 </select>
@@ -192,11 +177,10 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon5">Juez</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="numero_asociado_juez">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_jueces">
                 <!--LLAMAR LISTA JUECES--> 
-                <option value="20008 - Paco Rabone" selected>Juaz seleccionada</option>
-                  <option value="20010 - Paco Rabone">1</option>
-                  <option value="20009 - Paco Rabone">20009 - Paco Rabone</option>
+                <option value="20008 - Paco Rabone" selected>Juez seleccionado</option>
+                  <option value="20009 - Paco Rabone"></option>
                   <option value="4">3</option>
                 </select>
               </div>
@@ -449,11 +433,7 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Ciudad</span>
-<<<<<<< HEAD
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="id_ciudad">
-=======
                 <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_ganador_c">
->>>>>>> checho2
                   <option value="1" selected>3 - Cucuta</option>
                   <option value="2">2</option>
                   <option value="3">3</option>

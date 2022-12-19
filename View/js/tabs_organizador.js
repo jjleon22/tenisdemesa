@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   document.getElementById("txt_nombre").innerHTML = `
   <li style="list-style: none;" id="txt_nombre">${sessionStorage.getItem("nombre")}</li>`
   getSalas();
+  getParticipante1()
 });
 
 let pestanaActiva = 0;
@@ -41,10 +42,6 @@ function pillActive(activo) {
 </div>`;
   pestanaActiva = activo;
   cargarTabla(tabsId[activo]);
-}
-
-async function llamarsala(){
-  
 }
 
 
@@ -402,4 +399,31 @@ async function getSalas()
     ${lista}
     `;
   }
+}
+
+async function getParticipante1()
+{
+  const request = await fetch(
+    "http://localhost/tenisdemesa/Organizador/getParticipante1",
+    {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  if(request.ok)
+  {   
+      data = await request.json();
+      lista = "";
+      data.forEach((i)=>{
+        lista += `<option value="${i["numero_asociado"] + " - " + i["nombre"]}">${i["numero_asociado"] + " - " + i["nombre"]}</option>`
+      })
+      document.getElementById("lst_jueces").innerHTML = `
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_jueces">
+      ${lista}
+      `;
+    }
+    
 }
