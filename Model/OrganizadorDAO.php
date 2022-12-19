@@ -43,6 +43,13 @@ class OrganizadorDAO extends Query
         return $data;
     }
 
+    public function getJugador()
+    {
+        $SQL = "SELECT numero_asociado,nombre FROM participante where id_rol = 4";
+        $data = $this->selectAll($SQL);
+        return $data;
+    }
+
 
 
     public function insertarparticipante($id, $nombre, $direccion, $nivel_juego, $correo, $clave, $id_rol)

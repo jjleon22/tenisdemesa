@@ -24,6 +24,13 @@
             echo json_encode($data,JSON_UNESCAPED_UNICODE);
             die();//terminar peticion
         }
+
+        public function getJugador()
+        {
+            $data = $this->model->getJugador();
+            echo json_encode($data,JSON_UNESCAPED_UNICODE);
+            die();//terminar peticion
+        }
     
         public function insertarparticipante()
         {

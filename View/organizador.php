@@ -187,7 +187,7 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon6">Jugador 1</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="numero_asociado_jugador1">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador">
                 <!--LLAMAR LISTA JUGADOR-->  
                 <option value="1" selected>Juagdor seleccionada</option>
                   <option value="2">1</option>
@@ -198,7 +198,7 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon7">Jugador 2</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="numero_asociado_jugador2">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador2">
                 <!--LLAMAR LISTA JUGADOR-->    
                 <option value="1" selected>Juagdor seleccionada</option>
                   <option value="20002 - Crespo Young">20002 - Crespo Young</option>
