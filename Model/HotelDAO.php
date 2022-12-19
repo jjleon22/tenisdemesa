@@ -13,6 +13,12 @@
             $data = $this->selectAll($SQL);
             return $data;
         }
+        public function getHotelito()
+    {
+        $SQL = "SELECT id_hotel,nombre FROM hotel";
+        $data = $this->selectAll($SQL);
+        return $data;
+    }
 
         public function insertarhotel($id_hotel, $nombre, $direccion)
     {

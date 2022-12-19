@@ -13,6 +13,13 @@
             die();
         }
 
+        public function getCiudad()
+        {
+            $data = $this->model->getCiudad();
+            echo json_encode($data,JSON_UNESCAPED_UNICODE);
+            die();//terminar peticion
+        } 
+
         public function insertarciudad()
         {
             $id_ciudad = ($_POST['id_ciudad']); 

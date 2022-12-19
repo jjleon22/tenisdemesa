@@ -177,18 +177,19 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon5">Juez</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="numero_asociado_juez">
-                  <option value="20008 - Paco Rabone" selected>Juaz seleccionada</option>
-                  <option value="20010 - Paco Rabone">1</option>
-                  <option value="20009 - Paco Rabone">20009 - Paco Rabone</option>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="lst_jueces">
+                <!--LLAMAR LISTA JUECES--> 
+                <option value="20008 - Paco Rabone" selected>Juez seleccionado</option>
+                  <option value="20009 - Paco Rabone"></option>
                   <option value="4">3</option>
                 </select>
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon6">Jugador 1</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="numero_asociado_jugador1">
-                  <option value="1" selected>Juagdor seleccionada</option>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador">
+                <!--LLAMAR LISTA JUGADOR-->  
+                <option value="1" selected>Juagdor seleccionada</option>
                   <option value="2">1</option>
                   <option value="3">2</option>
                   <option value="20000 - Juan Tenerife">20000 - Juan Tenerife</option>
@@ -197,8 +198,9 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon7">Jugador 2</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="numero_asociado_jugador2">
-                  <option value="1" selected>Juagdor seleccionada</option>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador2">
+                <!--LLAMAR LISTA JUGADOR-->    
+                <option value="1" selected>Juagdor seleccionada</option>
                   <option value="20002 - Crespo Young">20002 - Crespo Young</option>
                   <option value="3">2</option>
                   <option value="4">3</option>
@@ -250,21 +252,21 @@
             <div class="modal-body">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"># Asociado</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Numero Asociado" aria-describedby="basic-addon1" id="txt_num_asociado_p" value="20001">
+                <input type="text" class="form-control" placeholder="Username" aria-label="Numero Asociado" aria-describedby="basic-addon1" id="numero_asociado" value="">
                 <span class="input-group-text" id="basic-addon1">Nombre</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="txt_nombre_p" value="Juane Freio">
+                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="nombre" value="Juane Freio">
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Direccion</span>
-                <input type="text" class="form-control" placeholder="Direccion" aria-label="Direccion" aria-describedby="basic-addon1" id="txt_direccion_p" value="Calle 9 # 38 - 75">
+                <input type="text" class="form-control" placeholder="Direccion" aria-label="Direccion" aria-describedby="basic-addon1" id="direccion" value="Calle 9 # 38 - 75">
                 <span class="input-group-text" id="basic-addon4">Email</span>
-                <input type="email" class="form-control" id="txt_email" aria-describedby="basic-addon3" value="juaneFrio@lbpp.com">
+                <input type="email" class="form-control" id="correo" aria-describedby="basic-addon3" value="juaneFrio@lbpp.com">
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Nivel de juego</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_nivel_p">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="nivel_juego">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -277,18 +279,19 @@
                   <option value="10">10</option>
                 </select>
                 <span class="input-group-text" id="basic-addon5">Ciudad</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_ciudad_p">
-                  <option value="20008 - Paco Rabone" selected>1 - Cali</option>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listaciudad">
+                <!--LLAMAR LISTA CIUDAD-->  
+                <option value="20008 - Paco Rabone" selected>1 - Cali</option>
                   <option value="20010 - Paco Rabone">1</option>
                   <option value="20009 - Paco Rabone">20009 - Paco Rabone</option>
                   <option value="4">3</option>
                 </select>
                 <span class="input-group-text" id="basic-addon5">Rol</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_rol_p">
-                  <option value="20008 - Paco Rabone" selected>1 - Admin</option>
-                  <option value="20010 - Paco Rabone">1</option>
-                  <option value="20009 - Paco Rabone">20009 - Paco Rabone</option>
-                  <option value="4">3</option>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="id_rol">
+                  <option value="1" selected>1 - Admin</option>
+                  <option value="2">2 - Organizador</option>
+                  <option value="3">3 - Jugador</option>
+                  <option value="4">4 - Juez</option>
                 </select>
               </div>
 
@@ -312,18 +315,18 @@
             <div class="modal-body">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Nombre</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="txt_nombre_h" value="B de BAKATA">
+                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="nombre" value="">
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Direccion</span>
-                <input type="text" class="form-control" placeholder="Direccion" aria-label="Direccion" aria-describedby="basic-addon1" id="txt_direccion_h" value="Carrera 7A # 46-75">
+                <input type="text" class="form-control" placeholder="Direccion" aria-label="Direccion" aria-describedby="basic-addon1" id="direccion" value="Carrera 7A # 46-75">
               </div>
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar Cambios</button>
             </div>
           </div>
         </div>
@@ -340,7 +343,7 @@
             <div class="modal-body">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Hotel Asociado</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_hoteles_sala">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listahotel">
                   <option value="1" selected>1 - B de BAKATA</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -353,7 +356,7 @@
                   <option value="10">10</option>
                 </select>
                 <span class="input-group-text" id="basic-addon1">Capacidad sala</span>
-                <input type="text" class="form-control" placeholder="capacidad" aria-label="capacida" aria-describedby="basic-addon1" id="txt_capacidad_sala" value="40">
+                <input type="text" class="form-control" placeholder="capacidad" aria-label="capacida" aria-describedby="basic-addon1" id="capacidad" value="">
               </div>
               <div id="chk_medios">
                 <div class="form-check form-switch">
@@ -397,18 +400,18 @@
             <div class="modal-body">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Nombre</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="txt_nombre_ciudad" value="Cali">
+                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="nombre" value="Cali">
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"># Clubes</span>
-                <input type="number" class="form-control" placeholder="Direccion" aria-label="Direccion" aria-describedby="basic-addon1" id="txt_num_clubes" value="4">
+                <input type="number" class="form-control" placeholder="Direccion" aria-label="Direccion" aria-describedby="basic-addon1" id="num_clubes" value="4">
               </div>
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar Cambios</button>
             </div>
           </div>
         </div>
@@ -425,12 +428,12 @@
             <div class="modal-body">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Titulo</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="txt_nombre_c" value="PP 1">
+                <input type="text" class="form-control" placeholder="Username" aria-label="Nombre" aria-describedby="basic-addon1" id="nombre" value="PP 1">
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Ciudad</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_ganador_c">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listaciudad">
                   <option value="1" selected>3 - Cucuta</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -446,7 +449,7 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Ganador</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_ganador_c">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador">
                   <option value="1" selected>20003 - Camilo Cruz</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
