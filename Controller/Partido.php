@@ -32,6 +32,8 @@
                 $msg = "Todos los campos son obligatorios";
             } else {
                 $data = $this->model->insertarpartido($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas);
+                $data = $this->model->insertarresultado($id_partido, $numero_asociado_juez, $numero_asociado_jugador1, $numero_asociado_jugador2,
+                $numero_asociado_ganador, $marcador, $comenatrios);
                 if ($data === "ok") {
                     $msg = "Partido registrado";
                 } else {
