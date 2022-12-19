@@ -37,7 +37,7 @@ async function logeo(e) {
       sessionStorage.setItem("rol", data.rol);
       
       if (data.rol == 1) {
-        window.location = base_url + "administrador";
+        window.location = "administrador";
       } else if (data.rol == 2) {
         window.location = "http://localhost/tenisdemesa/Organizador";
       } else if (data.rol == 3) {
