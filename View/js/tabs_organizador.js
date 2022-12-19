@@ -230,20 +230,21 @@ async function cargarUno(activo, id) {
 
   if(activo = "tabPartidos")
   {
-    let txt_num_asociado = document.getElementById("txt_num_asociado");
-    let dt_fecha = document.getElementById("dt_fecha");
+    let txt_marcador = document.getElementById("txt_marcador_j1") + "-" +document.getElementById("txt_marcador_j2");
+    let dt_fecha = document.getElementById("fecha_de_juego");
     let list_sala = document.getElementById("list_sala");
     let txt_entradas = document.getElementById("txt_entradas");
-    let list_juez = document.getElementById("list_juez");
-    let list_j1 = document.getElementById("list_j1");
-    let list_j2 = document.getElementById("list_j2");
+    let list_juez = document.getElementById("lst_jueces");
+    let list_j1 = document.getElementById("listajugador");
+    let list_j2 = document.getElementById("listajugador2");
     let txt_j1 = document.getElementById("txt_j1");
     let txt_j2 = document.getElementById("txt_j2");
     let chk_j1 = document.getElementById("chk_j1");
     let chk_j2 = document.getElementById("chk_j2");
     let txt_comentarios = document.getElementById("txt_comentarios");
+    let txt_id_partido = document.getElementById("txt_id_partido");
 
-    txt_num_asociado.value = data["id"];
+    txt_id_partido.value = data["id"];
     dt_fecha.value = data["Fecha"];
     list_sala.value = data["Sala"];
     txt_entradas.value = data["Entradas Vendidas"];
@@ -512,6 +513,10 @@ async function getCiudad()
       <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listaciudad">
       ${lista}`
       ;
+      document.getElementById("listaciudad_p").innerHTML = `
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listaciudad">
+      ${lista}`
+      ;
     }
     
 }
@@ -535,7 +540,11 @@ async function getHotelito()
       data.forEach((i)=>{
         lista += `<option value="${i["id_hotel"] + " - " + i["nombre"]}">${i["id_hotel"] + " - " + i["nombre"]}</option>`
       })
-      document.getElementById("listahotel").innerHTML = `
+      /*document.getElementById("listahotel").innerHTML = `
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listahotel">
+      ${lista}`
+      ;*/
+      document.getElementById("listahotel_s").innerHTML = `
       <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listahotel">
       ${lista}`
       ;
