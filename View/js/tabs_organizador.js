@@ -42,6 +42,11 @@ function pillActive(activo) {
   cargarTabla(tabsId[activo]);
 }
 
+async function llamarsala(){
+  
+}
+
+
 async function cargarTabla(activo) {
   const elegirTabla = {
     tabPartidos: "Partido/getPartidos",
