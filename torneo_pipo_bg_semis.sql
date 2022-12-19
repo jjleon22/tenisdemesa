@@ -131,7 +131,6 @@ VALUES ('B de BAKATA', 'Carrera 7A # 46-75'),
 ('Hotel Camaron', 'Transversal 8 # 6A BIS - 54'),
 ('Hostal Capicua', 'Avenida Gaitan #56-76'),
 ('Hotel Capsulas Urbanas', 'Aeropuerto el Dorado');
-select * from medio_comunicacion;
 INSERT INTO sala (id_hotel, capacidad) VALUES 
 (1,40),(1,30),(1,35),(2,60),(2,70),(2,40),(3,60),(3,10),(4,60),(4,100),(5,200),(5,500);
 INSERT INTO medios_sala VALUES (1,1),(1,2),(1,4),(1,5),
@@ -150,7 +149,7 @@ INSERT INTO ciudad (nombre, num_clubes) VALUES
 ('Cali',4),('B/Manga',4),('Cucuta',1),('Bogota D.C.',14),
 ('Caldas',7),('Mirada',6),('Ricaurte',1),('Medellin',8);
 INSERT INTO participante (nombre,direccion,nivel_de_juego,correo,clave,id_ciudad,id_rol)
-VALUES ('Juane Freio', 'Calle 9 # 38 - 75', 5, 'juaneFrio@lbpp.com','clave',1,1),
+VALUES ('Juane Freio', 'Calle 9 # 38 - 75', 5, 'juaneFrio@lbpp.com','clave',1,4),
 ('Crespo Young', 'Calle 8 # 67 - 75', 1, 'crespoYong@lbpp.com','clave',2,4),
 ('Camilo Cruz', 'Carrera 6 # 34 - 56', 2, 'camiloCruz@lbpp.com','clave',3,4),
 ('Pedro Landia', 'Calle 6 # 56 - 6', 3, 'pedroLaia@lbpp.com','clave',4,4),
@@ -160,7 +159,7 @@ VALUES ('Juane Freio', 'Calle 9 # 38 - 75', 5, 'juaneFrio@lbpp.com','clave',1,1)
 ('Daniel Torres', 'Calle 32 # 8 - 78', 6, 'danielToes@lbpp.com','clave',8,4),
 ('Paco Rabone', 'Carrera 33 # 3 - 89', 8, 'pacoRane@lbpp.com','clave',8,3),
 ('Metro Metropolis', 'Calle 45 # 367 - 897', 9, 'metroMeis@lbpp.com','clave',4,3),
-('Argento Cristo', 'Carrera 45 # 386 - 78', 10, 'argentoCrto@lbpp.com','clave',5,2)
+('Argento Cristo', 'Carrera 45 # 386 - 78', 10, 'argentoCrto@lbpp.com','clave',5,2),
 ('Mariana Rosa', 'Calle 99 # 38 - 75', 5, 'marianaRosa@lbpp.com','clave',1,4),
 ('Sergio Dominguez', 'Calle 80 # 670 - 75', 1, 'sergioDoez@lbpp.com','clave',6,4),
 ('Camilo Diaz', 'Carrera 60 # 34 - 56', 2, 'camiloDiaz@lbpp.com','clave',3,4),
@@ -181,7 +180,7 @@ INSERT INTO hospedaje VALUES
 (4,20008,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
 (5,20009,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
 (1,20010,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
-(1,20011,'2022-12-06 18:48:37','2022-12-15 18:48:37')
+(1,20011,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
 (2,20012,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
 (1,20013,'2022-12-06 18:48:37','2022-12-15 18:48:37'),
 (3,20014,'2022-12-06 18:48:37','2022-12-18 18:48:37'),
@@ -189,14 +188,14 @@ INSERT INTO hospedaje VALUES
 (5,20016,'2022-12-06 18:48:37','2022-12-18 18:48:37'),
 (1,20017,'2022-12-06 18:48:37','2022-12-29 18:48:37'),
 (2,20018,'2022-12-06 18:48:37','2022-12-20 18:48:37'),
-(4,20019,'2022-12-06 18:48:37','2022-12-21 18:48:37');
+(4,20001,'2022-12-06 18:48:37','2022-12-21 18:48:37');
 INSERT INTO telefono_hotel VALUES
 (1,'6015673456'),(1,'6015673457'),
 (2,'60145473456'),(2,'6015656757'),
 (3,'6015673234'),
 (4,'6015673566'),(1,'2345678901'),(4,'6017673456'),
 (5,'6015673456');
-INSERT INTO telefono_parcipante VALUES
+INSERT INTO telefono_participante VALUES
 (20009,'6015673456'),(20002,'3406566777'),
 (20002,'3132233322'),(20003,'3242423424'),
 (20004,'6034555669'),
