@@ -6,7 +6,7 @@
         }
         public function getPartidos()
         {
-            $SQL = "SELECT p.id_partido AS \"Num Asociado\", 
+            $SQL = "SELECT p.id_partido AS \"Num Partido\", 
             p.fecha_de_juego AS \"Fecha\", 
             p.id_sala AS \"Sala\",
             p.num_entradas_vendidas AS \"Entradas Vendidas\",
@@ -35,12 +35,48 @@
         return $res;
     }
 
+    public function insertarresultado($id_partido, $numero_asociado_juez, $numero_asociado_jugador1, $numero_asociado_jugador2,
+    $numero_asociado_ganador, $marcador, $comenatrios)
+    {
+        $sql = "INSERT INTO resultado_partido(id_partido,numero_asociado_juez,numero_asociado_jugador1,numero_asociado_jugador2,
+        numero_asociado_ganador, marcador, comenatrios) VALUES (?,?,?,?,?,?,?)";
+        $datos = array($id_partido, $numero_asociado_juez, $numero_asociado_jugador1, $numero_asociado_jugador2,
+        $numero_asociado_ganador, $marcador, $comenatrios);
+        $data = $this->save($sql, $datos);
+        if ($data == 1) {
+            $res = "ok";
+        } else {
+            $res = "error";
+        }
+        return $res;
+    }
+
+
+
     function editarpartido($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas)
 {
   
     $sql = "UPDATE partido SET fecha_de_juego = :fecha_de_juego, id_sala = :id_sala, num_entradas_vendidas = :num_entradas_vendidas
      WHERE id_partido = :id_partido";
     $datos = array($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas);
+    $data = $this->editar($sql, $datos);
+    return $data;
+    if($data == 1){
+        $res = "ok";
+    } else {
+        $res = "error";
+    }
+  }
+
+  function editarresultado($id_partido, $numero_asociado_juez, $numero_asociado_jugador1, 
+  $numero_asociado_jugador2, $numero_asociado_ganador, $marcador, $comenatrios)
+{
+  
+    $sql = "UPDATE resultado_partido SET numero_asociado_juez = :numero_asociado_juez, numero_asociado_jugador1 = :numero_asociado_jugador1, 
+    numero_asociado_jugador2 = :numero_asociado_jugador2, numero_asociado_ganador = :numero_asociado_ganador, marcador = :marcador,
+    comenatrios = :comenatrios WHERE id_partido = :id_partido";
+    $datos = array($id_partido,$numero_asociado_juez, $numero_asociado_jugador1, 
+    $numero_asociado_jugador2, $numero_asociado_ganador, $marcador, $comenatrios);
     $data = $this->editar($sql, $datos);
     return $data;
     if($data == 1){

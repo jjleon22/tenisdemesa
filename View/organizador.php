@@ -158,27 +158,40 @@
             </div>
             <div class="modal-body">
               <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"># Asociado</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Numero Asociado" aria-describedby="basic-addon1" id="txt_num_asociado">
+                <span class="input-group-text" id="basic-addon1"># Partido</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Numero Asociado" aria-describedby="basic-addon1" id="id_partido">
                 <span class="input-group-text" id="basic-addon2">Fecha de partido</span>
-                <input type="date" class="form-control" value="2022-12-20" aria-describedby="basic-addon2" id="dt_fecha">
+                <input type="date" class="form-control" value="2022-12-20" aria-describedby="basic-addon2" id="fecha_de_juego">
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Sala</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_sala">
-                  <option value="1" selected>Sala seleccionada</option>
-                  <option value="2">1</option>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="id_sala">
+                <option value="1" selected>Sala seleccionada</option>
+                    <!-- Consulta de id salas -->
+                  <?php include('/Controller/Partido.php'); 
+                  while(getSalas() return true)
+                  {
+                    ?>
+                    <option value="<?php getSalas('id_sala')?>"><?php getSalas('id_sala')?></option>
+                    <?php
+                  }
+                  ?>
+
+                  
+                  
                   <option value="3">2</option>
                   <option value="4">3</option>
+                  
+                  
                 </select>
                 <span class="input-group-text" id="basic-addon4">Entradas vendidas</span>
-                <input type="number" class="form-control" id="txt_entradas" aria-describedby="basic-addon3">
+                <input type="number" class="form-control" id="num_entradas_vendidas" aria-describedby="basic-addon3">
               </div>
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon5">Juez</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_juez">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="numero_asociado_juez">
                   <option value="20008 - Paco Rabone" selected>Juaz seleccionada</option>
                   <option value="20010 - Paco Rabone">1</option>
                   <option value="20009 - Paco Rabone">20009 - Paco Rabone</option>
@@ -188,7 +201,7 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon6">Jugador 1</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_j1">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="numero_asociado_jugador1">
                   <option value="1" selected>Juagdor seleccionada</option>
                   <option value="2">1</option>
                   <option value="3">2</option>
@@ -198,7 +211,7 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon7">Jugador 2</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_j2">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="numero_asociado_jugador2">
                   <option value="1" selected>Juagdor seleccionada</option>
                   <option value="20002 - Crespo Young">20002 - Crespo Young</option>
                   <option value="3">2</option>
@@ -209,19 +222,19 @@
               <label for="basic-url" class="form-label">Marcador del partido</label>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon4">Juagdor 1</span>
-                <input type="number" class="form-control" id="txt_j1" aria-describedby="basic-addon3">
+                <input type="number" class="form-control" id="marcador" aria-describedby="basic-addon3">
                 <span class="input-group-text" id="basic-addon4">Juagdor 2</span>
-                <input type="number" class="form-control" id="txt_j2" aria-describedby="basic-addon3">
+                <input type="number" class="form-control" id="marcador" aria-describedby="basic-addon3">
               </div>
 
               <label for="basic-url" class="form-label">Ganador del partido</label>
               <div class="input-group mb-3">
                 <div class="input-group-text">
-                  <input class="form-check-input" type="radio" id="chk_j1" value="1" checked name="gruop_ganandor">
+                  <input class="form-check-input" type="radio" id="numero_asociado_ganador" value="numero_asociado_jugador1" checked name="gruop_ganandor">
                 </div>
                 <label class="form-control" for="chk_j1">1</label>
                 <div class="input-group-text">
-                  <input class="form-check-input" type="radio" id="chk_j2" value="2" name="gruop_ganandor">
+                  <input class="form-check-input" type="radio" id="numero_asociado_ganador" value="numero_asociado_jugador2" name="gruop_ganandor">
                 </div>
                 <label class="form-control" for="chk_j2">2</label>
               </div>
@@ -229,12 +242,12 @@
 
               <div class="input-group">
                 <span class="input-group-text">Comentarios</span>
-                <textarea class="form-control" aria-label="With textarea" id="txt_comentarios"></textarea>
+                <textarea class="form-control" aria-label="With textarea" id="comenatrios"></textarea>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Guardar Cambios</button>
             </div>
           </div>
         </div>
