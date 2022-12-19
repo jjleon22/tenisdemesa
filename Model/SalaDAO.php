@@ -5,6 +5,14 @@ class SalaDAO extends Query
     {
         parent::__construct();
     }
+
+    public function getSalas1()
+    {
+        $SQL = "SELECT id_sala FROM sala";
+        $data = $this->selectAll($SQL);
+        return $data;
+    }
+
     public function getSalas()
     {
         $SQL = "SELECT s.id_sala AS \"Número Sala\", 

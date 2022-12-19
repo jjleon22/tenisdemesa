@@ -6,7 +6,7 @@
         }
         public function getPartidos()
         {
-            $SQL = "SELECT p.id_partido AS \"Num Partido\", 
+            $SQL = "SELECT p.id_partido AS \"ID Partido\", 
             p.fecha_de_juego AS \"Fecha\", 
             p.id_sala AS \"Sala\",
             p.num_entradas_vendidas AS \"Entradas Vendidas\",
@@ -22,10 +22,18 @@
             return $data;
         }
 
+        public function getPartidoRes($fecha_de_juego, $id_sala, $num_entradas_vendidas)
+        {
+            $SQL = "SELECT id_partido FROM partido WHERE fecha_de_juego::TEXT LIKE '%:fecha_de_juego%' AND id_sala=:id_sala AND num_entradas_vendidas=:num_entradas_vendidas;" ;
+            //$datos = array($fecha_de_juego, $id_sala, $num_entradas_vendidas);
+            $data = $this->select($SQL);
+            return $data;
+        }
+
         public function insertarpartido($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas)
     {
-        $sql = "INSERT INTO partido(id_partido,fecha_de_juego,id_sala,num_entradas_vendidas) VALUES (?,?,?,?)";
-        $datos = array($id_partido, $fecha_de_juego, $id_sala, $num_entradas_vendidas);
+        $sql = "INSERT INTO partido(fecha_de_juego,id_sala,num_entradas_vendidas) VALUES (?,?,?)";
+        $datos = array($fecha_de_juego, $id_sala, $num_entradas_vendidas);
         $data = $this->save($sql, $datos);
         if ($data == 1) {
             $res = "ok";
