@@ -35,9 +35,9 @@ function pillActive(activo) {
     <button class="nav-link active" onclick="pillActive(${activo})">${tabsName[activo]}</button>
     </li>
     `;
-  /*document.getElementById("btnCrear").innerHTML = `<div class="d-grid gap-2" id="btnCrear">
-  <button class="btn btn-primary" type="button" onclick="crearRegistro(${activo})">Crear Registro</button>
-</div>`;*/
+  document.getElementById("btnCrear").innerHTML = `<div class="d-grid gap-2" id="btnCrear">
+  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal${tabsId[activo]}Crear">Crear Registro</button>
+</div>`;
   pestanaActiva = activo;
   cargarTabla(tabsId[activo]);
 }
@@ -310,12 +310,43 @@ var groupBy = function (miarray, prop) {
   }, {});
 }
 
-function crearRegistro(activo)
+async function crearRegistro(activo)
 {
   switch(activo)
   {
     case 0:
     {
+      let data = {
+        fecha_de_juego: document.getElementById("dt_fecha_crear").value,
+        id_sala: document.getElementById("list_sala_crear").value,
+        num_entradas_vendidas: document.getElementById("txt_entradas").value ||0,
+        numero_asociado_juez: document.getElementById("list_juez_crear").value,
+        numero_asociado_jugador1: document.getElementById("list_j1_crear").value.includes("-") ? document.getElementById("list_j1_crear").value.split(" - ")[0]:document.getElementById("list_j1_crear").value,
+        numero_asociado_jugador2: document.getElementById("list_j2_crear").value.includes("-") ? document.getElementById("list_j2_crear").value.split(" - ")[0]:document.getElementById("list_j2_crear").value,
+        numero_asociado_ganador: "",
+        marcador: document.getElementById("txt_j1_crear").value + "-" + document.getElementById("txt_j2_crear").value || "0-0",
+        comentarios: document.getElementById("txt_comentarios_crear").value
+      }
+      data.numero_asociado_ganador = document.getElementById("chk_j1_crear").checked ? data.numero_asociado_jugador1 : data.numero_asociado_jugador2;
+
+      const request = await fetch(
+        "http://localhost/tenisdemesa/Partido/insertarpartido",
+        {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }
+      );
+  
+      const data2 = await request.json();
+      //console.log(data2);
+      
+      if (request.ok && request.status == 200) {
+      console.log(data2)
+      }
       break;
     }
     case 1:

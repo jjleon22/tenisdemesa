@@ -6,7 +6,7 @@
         }
         public function getPartidos()
         {
-            $SQL = "SELECT p.id_partido AS \"Num Asociado\", 
+            $SQL = "SELECT p.id_partido AS \"ID Partido\", 
             p.fecha_de_juego AS \"Fecha\", 
             p.id_sala AS \"Sala\",
             p.num_entradas_vendidas AS \"Entradas Vendidas\",

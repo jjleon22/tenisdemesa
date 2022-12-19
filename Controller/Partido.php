@@ -13,10 +13,11 @@
 
         public function insertarpartido()
         {
-            $id_partido = ($_POST['id_partido']); 
-            $fecha_de_juego = ($_POST['fecha_de_juego']);
-            $id_sala = ($_POST['id_sala']);
-            $num_entradas_vendidas = ($_POST['num_entradas_vendidas']);
+            $_post = json_decode(file_get_contents('php://input'),true);>
+            $id_partido = ($_post['id_partido']); 
+            $fecha_de_juego = ($_post['fecha_de_juego']);
+            $id_sala = ($_post['id_sala']);
+            $num_entradas_vendidas = ($_post['num_entradas_vendidas']);
     
             if (
                 empty($id_partido) || empty($fecha_de_juego) || empty($id_sala) || empty($num_entradas_vendidas)
