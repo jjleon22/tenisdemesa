@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   getSalas();
   getParticipante1();
   getJugador();
+  getCiudad();
+  getHotelito();
 });
 
 let pestanaActiva = 0;
@@ -455,6 +457,60 @@ async function getJugador()
       `<select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador2">
       ${lista}
       `;
+    }
+    
+}
+
+async function getCiudad()
+{
+  const request = await fetch(
+    "http://localhost/tenisdemesa/Ciudad/getCiudad",
+    {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  if(request.ok)
+  {   
+      data = await request.json();
+      lista = "";
+      data.forEach((i)=>{
+        lista += `<option value="${i["id_ciudad"] + " - " + i["nombre"]}">${i["id_ciudad"] + " - " + i["nombre"]}</option>`
+      })
+      document.getElementById("listaciudad").innerHTML = `
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listaciudad">
+      ${lista}`
+      ;
+    }
+    
+}
+
+async function getHotelito()
+{
+  const request = await fetch(
+    "http://localhost/tenisdemesa/Hotel/getHotelito",
+    {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  if(request.ok)
+  {   
+      data = await request.json();
+      lista = "";
+      data.forEach((i)=>{
+        lista += `<option value="${i["id_hotel"] + " - " + i["nombre"]}">${i["id_hotel"] + " - " + i["nombre"]}</option>`
+      })
+      document.getElementById("listahotel").innerHTML = `
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listahotel">
+      ${lista}`
+      ;
     }
     
 }

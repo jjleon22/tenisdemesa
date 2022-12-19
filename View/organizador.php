@@ -279,7 +279,7 @@
                   <option value="10">10</option>
                 </select>
                 <span class="input-group-text" id="basic-addon5">Ciudad</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="id_ciudad">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listaciudad">
                 <!--LLAMAR LISTA CIUDAD-->  
                 <option value="20008 - Paco Rabone" selected>1 - Cali</option>
                   <option value="20010 - Paco Rabone">1</option>
@@ -343,7 +343,7 @@
             <div class="modal-body">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Hotel Asociado</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="id_hotel">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listahotel">
                   <option value="1" selected>1 - B de BAKATA</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -433,7 +433,7 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Ciudad</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_ganador_c">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listaciudad">
                   <option value="1" selected>3 - Cucuta</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -449,7 +449,7 @@
 
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon3">Ganador</span>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="list_ganador_c">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="listajugador">
                   <option value="1" selected>20003 - Camilo Cruz</option>
                   <option value="2">2</option>
                   <option value="3">3</option>

@@ -17,6 +17,13 @@
             die();//terminar peticion
         }
 
+        public function getHotelito()
+        {
+            $data = $this->model->getHotelito();
+            echo json_encode($data,JSON_UNESCAPED_UNICODE);
+            die();//terminar peticion
+        }
+
         public function insertarhotel()
         {
             $id_hotel = ($_POST['id_hotel']); 

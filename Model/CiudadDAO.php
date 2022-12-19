@@ -16,6 +16,13 @@
             return $data;
         }
 
+        public function getCiudad()
+    {
+        $SQL = "SELECT id_ciudad,nombre FROM ciudad";
+        $data = $this->selectAll($SQL);
+        return $data;
+    }
+
         public function insertarciudad($id_ciudad, $nombre, $num_clubes)
     {
         $sql = "INSERT INTO ciudad(id_ciudad,nombre,num_clubes) VALUES (?,?,?)";
